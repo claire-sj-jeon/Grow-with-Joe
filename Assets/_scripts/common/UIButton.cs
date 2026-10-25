@@ -32,7 +32,6 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public Animator AnimatorComponent { get { return gameObject.GetComponentInChildren<Animator>(); } }
     public void InvokeDown() { /*ClickDownSound();*/  callbackDown.Invoke(this);  }
     public void InvokeUp() { callbackUp.Invoke( this ); }
-
     public UnityAction<UIButton>  callbackEnter { get; set; } = delegate (UIButton btn) { };
     public UnityAction<UIButton> callbackExit { get; set; } = delegate (UIButton btn) { };
     public UnityAction<UIButton> callbackDown { get; set; } = delegate (UIButton btn) { };
@@ -73,6 +72,8 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         TimeDown = Time.time;
         EventData = evdata;
         callbackDown(this);
+
+        StopAllCoroutines();
     }
     public void ClearCountDown()
     {
@@ -113,25 +114,22 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     }
 
     bool lastbtnstate = false;
-    private void Update()
+
+    public void TimerAutoDown( float time )
     {
-
-        //if( IsPointed == true)
-        //{
-        //    if(lastbtnstate == false  && WinInput.isLebtn() == true )
-        //    {
-        //        if(IsEnable == true )
-        //            if (TimeDown + clickDelay < Time.time)
-        //            {
-        //                ++CountDown;
-
-        //                TimeDown = Time.time;
-        //                callbackDown(this);
-
-        //                Debug.Log("UIBtn Click!!!");
-        //            }
-        //    }
-        //    lastbtnstate = WinInput.isLebtn();
-        //}
+        StartCoroutine(autoDown(time));
     }
+
+    IEnumerator autoDown( float time )
+    {
+        yield return new WaitForSeconds(time);
+
+        if (IsEnable == true)
+        {
+            ++CountDown;
+            TimeDown = Time.time;
+            callbackDown(this);
+        }
+    }
+
 }

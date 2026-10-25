@@ -91,6 +91,7 @@ namespace cowsins2D
         {
             btnNext.Activity = false;
             btnEnd.Activity = true;
+            btnEnd.TimerAutoDown(6.0f);
         }
         public void StepDialog(DialogForm form, DialogMenu menu )
         {
@@ -105,7 +106,7 @@ namespace cowsins2D
             portrain_parent.Activity = false;
             normal_parent.Activity = false;
 
-            // 초상화와 텍스트 
+            // 초상화와 텍스트 ========
             if (form.type == DialogType.PortraitAndText)
             {
                 portrain_parent.Activity = true;
@@ -116,11 +117,10 @@ namespace cowsins2D
             else
             {   normal_parent.Activity = true;
                 StartCoroutine(TypeText(normal_textBox, form.textCaption, 0.05f));
-            }
-                
-            //textBox.Text.text = form.textCaption;
+            }                
+            
 
-            // 이름 부분.
+            // 이름 부분. =========================
             if ( string.IsNullOrEmpty( form.textName ) == false )
             {
                 textNameBox_parent.Activity = true;
@@ -130,7 +130,7 @@ namespace cowsins2D
                 textNameBox_parent.Activity = false;
 
 
-            //  옵션 선택지 클리어
+            //  옵션 선택지 클리어 =========================
             for (int i = 0; i < lists.Count; ++i)
                 lists[i].Activity = false;
 
@@ -169,6 +169,7 @@ namespace cowsins2D
                 btnEnd.Activity = false;
             }
 
+            // 넓게 이미지가 나와서 설명을 도와주는 부분.
             wideimage_parent.Activity = false;
             if (form.type == DialogType.WideImageAndText)
             {
