@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 1790488870e3bad40899961a14dec14f
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Prefabs/DragAndDrop/2D/BigTargetEnemy.prefab
+  uploadId: 875044

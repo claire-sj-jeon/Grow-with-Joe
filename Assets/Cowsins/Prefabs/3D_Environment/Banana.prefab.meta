@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a3001ed56b352ce4e98e2bb86d39e539
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Prefabs/3D_Environment/Banana.prefab
+  uploadId: 875044

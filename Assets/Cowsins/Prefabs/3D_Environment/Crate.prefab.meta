@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9f1cbbc742ae16b40ba96f9a07715628
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Prefabs/3D_Environment/Crate.prefab
+  uploadId: 875044

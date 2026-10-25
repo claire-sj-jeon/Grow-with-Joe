@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d9b9528933500c54c85646ba3507634b
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Prefabs/3D_Environment/LargeBush.prefab
+  uploadId: 875044

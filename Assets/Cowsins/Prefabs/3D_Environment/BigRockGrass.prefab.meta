@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5394e8ea0a988e84388a6b155dd8dee8
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Prefabs/3D_Environment/BigRockGrass.prefab
+  uploadId: 875044

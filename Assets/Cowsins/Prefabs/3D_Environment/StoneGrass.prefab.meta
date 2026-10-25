@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 1a5a80259050ec846a703ff1cef21db0
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Prefabs/3D_Environment/StoneGrass.prefab
+  uploadId: 875044

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Cowsins/Scenes/MainMenu.unity
+    guid: 5a420ab414981034f957abd6db06776b
+  - enabled: 1
+    path: Assets/Cowsins/Scenes/2D/Tutorial.unity
+    guid: 41ca39fa4629a0f46a86384cb8be800e
+  - enabled: 1
+    path: Assets/Cowsins/Scenes/2D/2DShowcase.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Cowsins/Scenes/3D/3DShowroom.unity
+    guid: 46c3addd807c7c64eb7d57e9e3879cd6
+  - enabled: 1
+    path: Assets/Cowsins/Scenes/3D/3DLevelSelector.unity
+    guid: 498156ccab6484849bb5cbaa4b90fe6a
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 33f591010f343104f853b337a1fca25a, type: 2}

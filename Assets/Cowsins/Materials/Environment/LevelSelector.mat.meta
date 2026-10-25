@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 55960290c15e0ef46ae5ed3be7738a94
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Materials/Environment/LevelSelector.mat
+  uploadId: 875044

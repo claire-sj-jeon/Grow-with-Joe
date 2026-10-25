@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d0cf4e7e9362070468cb19d0c3dc0bbe
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Tilemap/environmenProps_89.asset
+  uploadId: 875044

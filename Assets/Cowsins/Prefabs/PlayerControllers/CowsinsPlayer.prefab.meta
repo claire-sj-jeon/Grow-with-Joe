@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 24d0198052b2e7947905ce135af40fca
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Prefabs/PlayerControllers/CowsinsPlayer.prefab
+  uploadId: 875044

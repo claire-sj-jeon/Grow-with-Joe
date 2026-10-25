@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 1ef75597087149946b45ce4d77581d9d
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Prefabs/UI/DashIcon.prefab
+  uploadId: 875044
