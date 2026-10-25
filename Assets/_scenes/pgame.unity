@@ -15581,7 +15581,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 1fb37f2ad15faa944970cf9682188434, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.148
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -30791,7 +30791,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &4483729058052493373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32634,7 +32634,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &4483729058513204204
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -33969,7 +33969,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4483729058736649584
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34008,7 +34008,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &4483729058736649613
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -37211,7 +37211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &4483729059934094946
 CanvasRenderer:
   m_ObjectHideFlags: 0

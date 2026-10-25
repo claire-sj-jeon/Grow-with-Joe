@@ -16,9 +16,9 @@ namespace cowsins2D
             if (Instance == null)
             {
                 Instance = this;
-                AudioConfiguration config = AudioSettings.GetConfiguration();
-                config.numRealVoices = 64;
-                AudioSettings.Reset(config);
+                //AudioConfiguration config = AudioSettings.GetConfiguration();
+                //config.numRealVoices = 64;
+                //AudioSettings.Reset(config);
             }
 
             // Get the AudioSource component on this GameObject.
