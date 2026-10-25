@@ -31,7 +31,24 @@ namespace cowsins2D
             {
                 //source.volume = volume;
                 source.PlayOneShot(clip);
+
+
             }
         }
+
+        public void PlayBgm(AudioClip clip, float volume)
+        {
+            if (clip != null)
+            {
+                source.volume = volume;
+                source.loop = true;
+                source.Play();
+
+                source.PlayOneShot(clip);
+
+            }
+        }
+
+
     }
 }

@@ -1,6 +1,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static cowsins2D.DialogForm;
@@ -19,6 +20,7 @@ namespace cowsins2D
     {
         public string text;
         public string afterText;
+        public Sprite aftersprite;
         public Sprite sprite;
         public TypeAnswer answerType;
     }
@@ -93,15 +95,30 @@ namespace cowsins2D
             btnEnd.Activity = true;
             btnEnd.TimerAutoDown(6.0f);
         }
+        public void ShowNextBtn(DialogMenu menu, bool isNext = true )
+        {
+            btnNext.Activity = true;
+            btnEnd.Activity = false;            
+
+            btnNext.callbackDown = (btn) =>
+            {   btn.Effect.ScaleEffect();
+                wideimage_parent.Activity = false;
+                btn.Activity = false;
+
+                if (isNext == true )
+                    RegisterFunction.SingleCall(0.1f, () => menu.NextDialog(this));
+            };
+
+        }
         public void StepDialog(DialogForm form, DialogMenu menu )
         {
             // show dialogbox
             root.Alpha = 0.0f;
             root.Activity = true;
             root.AlphaEffect();
+            
+            ShowNextBtn(menu);
 
-            btnNext.Activity = true;
-            btnEnd.Activity = false;
 
             portrain_parent.Activity = false;
             normal_parent.Activity = false;
@@ -152,6 +169,14 @@ namespace cowsins2D
                         choice.answerType,
                         (answer) =>
                         {
+                            if (choice.aftersprite != null)
+                            {
+                                wideimage_parent.Activity = true;
+                                wideimage_image.image.sprite = choice.aftersprite;
+                                wideimage_image.image.SetNativeSize();
+                                ShowNextBtn(menu, false);
+                            }
+
                             DialogMenu.Instance.GetAnaswer(answer, this);
 
                             if (form.type == DialogType.PortraitAndText)
@@ -181,13 +206,15 @@ namespace cowsins2D
             btnNext.callbackDown = (btn) =>
             {
                 btn.Effect.ScaleEffect();
+                wideimage_parent.Activity = false;
                 RegisterFunction.SingleCall(0.1f, () => menu.NextDialog(this));
             };
             btnEnd.callbackDown = (btn) =>
             {
                 btn.Effect.ScaleEffect();
+                wideimage_parent.Activity = false;
 
-                if( form.type == DialogType.LastQuestionWith3Choices)
+                if ( form.type == DialogType.LastQuestionWith3Choices)
                     RegisterFunction.SingleCall(0.1f, () => menu.GameClearDialog(this));
                 else
                     RegisterFunction.SingleCall(0.1f, () => menu.EndDialog(this));

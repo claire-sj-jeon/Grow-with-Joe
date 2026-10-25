@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -17,6 +18,7 @@ namespace cowsins2D
         [SerializeField] DialogTextBox Textbox;
         [SerializeField] AudioClip correctSfx;
         [SerializeField] AudioClip wrongSfx;
+        [SerializeField] AudioClip bgm;
 
         [SerializeField] 
         private int needclearCount;
@@ -51,6 +53,8 @@ namespace cowsins2D
             root.Activity = false;
             root.Alpha = 0.0f;
 
+
+            SoundManager.Instance.PlayBgm(bgm, 0.5f);
             QuestCountManager.OnQuestChange += QuestChange;
             RegisterFunction.SingleCall(1.0f, () => { QuestCountManager.Instance.Reset(); });                       
         }
@@ -97,14 +101,15 @@ namespace cowsins2D
                 QuestCountManager.Instance.AddQuest(1);
             }
             if (answer == TypeAnswer.NotWrong)
-            {
-
+            {                
+                
             }
             if (answer == TypeAnswer.Wrong)
             {
                 playerState.Damage(1);
                 uiController.InvokeOnUpdateHealth();
                 SoundManager.Instance.PlaySound(wrongSfx, 1);
+                
             }
         }
 
