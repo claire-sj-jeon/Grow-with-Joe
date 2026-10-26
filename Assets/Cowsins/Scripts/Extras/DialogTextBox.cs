@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using static cowsins2D.DialogForm;
 
 namespace cowsins2D
@@ -55,7 +57,7 @@ namespace cowsins2D
 
         [SerializeField] UiObject textNameBox_parent;
         [SerializeField] UiObject textNameBox;
-        
+
         [SerializeField] UiObject portrain_parent;
         [SerializeField] UiObject prtrain_image;
         [SerializeField] UiObject portrain_textBox;
@@ -63,13 +65,15 @@ namespace cowsins2D
         [SerializeField] UiObject wideimage_parent;
         [SerializeField] UiObject wideimage_image;
 
-        [SerializeField] UiObject normal_parent;        
+        [SerializeField] UiObject normal_parent;
         [SerializeField] UiObject normal_textBox;
 
         [SerializeField] UIButton btnNext;
         [SerializeField] UIButton btnEnd;
         [SerializeField] AudioClip sndTyping;
         [SerializeField] List<DialogChoiceOption> lists;
+
+        
 
         public void HideChoice()
         {
@@ -128,6 +132,9 @@ namespace cowsins2D
             {
                 portrain_parent.Activity = true;
                 prtrain_image.image.sprite = form.spritePortrait;
+                prtrain_image.image.GetComponent<AspectRatioFitter>().aspectRatio 
+                    = form.spritePortrait.rect.width / form.spritePortrait.rect.height;
+
                 prtrain_image.image.SetNativeSize();
                 StartCoroutine(TypeText(portrain_textBox, form.textCaption, 0.05f));
             }
@@ -173,6 +180,9 @@ namespace cowsins2D
                             {
                                 wideimage_parent.Activity = true;
                                 wideimage_image.image.sprite = choice.aftersprite;
+                                wideimage_image.image.GetComponent<AspectRatioFitter>().aspectRatio
+                                                    = choice.aftersprite.rect.width / choice.aftersprite.rect.height;
+
                                 wideimage_image.image.SetNativeSize();
                                 ShowNextBtn(menu, false);
                             }
@@ -189,7 +199,6 @@ namespace cowsins2D
                                     );
                         });
                 }
-
                 btnNext.Activity = false;
                 btnEnd.Activity = false;
             }
@@ -200,6 +209,8 @@ namespace cowsins2D
             {
                 wideimage_parent.Activity = true;
                 wideimage_image.image.sprite = form.spriteDescript;
+                wideimage_image.image.GetComponent<AspectRatioFitter>().aspectRatio
+                                    = form.spriteDescript.rect.width / form.spriteDescript.rect.height;
                 wideimage_image.image.SetNativeSize();
             }
 

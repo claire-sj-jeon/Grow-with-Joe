@@ -21,7 +21,48 @@ public class DeviceDetection : MonoBehaviour
         if (Instance == null) Instance = this;
 
     }
-    private void Update() => DetectInputs(); 
+
+    private void Start()
+    {
+            // 실행하는 platform 이 모바일 (webbuild 에서도 모바일플랫폼 브라우저상태라면
+            // touchInputUI 을 setactive true 하고 
+            // 아니면 setactive 를 false 한다.
+
+            bool isMobileDevice = IsMobileDevice();
+
+            if (touchInputUI != null)
+                touchInputUI.SetActive(isMobileDevice);
+
+            if (isMobileDevice)
+                mode = InputMode.Mobile;
+
+
+    }
+
+    private bool IsMobileDevice()
+    {
+        // 1. Android / iOS 앱 빌드
+        if (Application.isMobilePlatform)
+            return true;
+
+        // 2. WebBuild에서 모바일 브라우저 판별
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            // 터치스크린이 있으면 모바일 브라우저일 가능성이 높음
+            if (Touchscreen.current != null)
+                return true;
+
+            // 모바일 브라우저에서 마우스 없이 터치만 있는 경우 대응            
+            foreach (var device in InputSystem.devices)
+            {
+                if (device is Touchscreen)
+                    return true;
+            }           
+        }
+        return false;
+    }
+
+        private void Update() => DetectInputs(); 
 
     public void DetectInputs()
     {

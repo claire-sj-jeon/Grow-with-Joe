@@ -1,10 +1,21 @@
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace cowsins2D
 {
     public class PauseMenu : MonoBehaviour
     {
+
+#if UNITY_WEBGL && !UNITY_EDITOR
+    [DllImport("__Internal")]
+    private static extern void WebEnterFullscreen();
+
+    [DllImport("__Internal")]
+    private static extern void WebExitFullscreen();
+#endif
+
         public static PauseMenu Instance { get; private set; }
 
         public static bool isPaused { get; private set; }
@@ -14,6 +25,15 @@ namespace cowsins2D
         [SerializeField] private CanvasGroup menu;
 
         [SerializeField] private float fadeSpeed;
+
+
+        [SerializeField] Sprite sprTitle;
+        [SerializeField] UiObject targetTitle;
+        [SerializeField] UIButton btnResume;
+        [SerializeField] UIButton btnStart;
+
+        [SerializeField] Button btnrResume;
+        [SerializeField] Button btnrStart;
 
         private IPlayerControl playerControl;
         private Crosshair crosshair;
@@ -33,6 +53,23 @@ namespace cowsins2D
             if (Instance != null && Instance != this) Destroy(this);
             else Instance = this;
         }
+        public void FullScreen()
+        {
+#if UNITY_WEBGL && !UNITY_EDITOR
+            WebEnterFullscreen();
+            Debug.Log("callFullScreen");
+#endif
+            UnPause();
+        }
+        public void FullAndStart()
+        {
+#if UNITY_WEBGL && !UNITY_EDITOR
+            WebEnterFullscreen();
+            Debug.Log("callFullScreen");
+#endif
+            UnPause();
+            DialogMenu.Instance.StartIntroduceDialog();
+        }
 
         private void Start()
         {
@@ -42,7 +79,43 @@ namespace cowsins2D
             isPaused = false;
             menu.gameObject.SetActive(false);
             menu.alpha = 0;
-            UnPause();
+            //UnPause();
+            Pause();
+
+            btnStart.callbackDown = (btn) =>
+            {
+#if UNITY_WEBGL && !UNITY_EDITOR
+               
+                WebEnterFullscreen();
+                Debug.Log("callFullScreen");
+                        
+#endif
+                UnPause();
+                DialogMenu.Instance.StartIntroduceDialog();
+
+            };
+            btnResume.callbackDown = (btn) =>
+            {
+#if UNITY_WEBGL && !UNITY_EDITOR
+
+                WebEnterFullscreen();
+                Debug.Log("callFullScreen");
+#endif
+
+                UnPause();
+
+            };
+
+            targetTitle.image.sprite = sprTitle;
+            targetTitle.image.GetComponent<AspectRatioFitter>().aspectRatio = sprTitle.rect.width / sprTitle.rect.height;
+            targetTitle.image.SetNativeSize();
+
+            btnResume.Activity = false;
+            btnStart.Activity = true;
+
+            btnrResume.gameObject.SetActive(false);
+            btnrStart.gameObject.SetActive(true);
+
         }
         private void Update()
         {
@@ -76,6 +149,13 @@ namespace cowsins2D
             if(playerControl != null) playerControl.LoseControl();
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+
+            //btnResume.Activity = true;
+            //btnStart.Activity = false;
+
+            btnrResume.gameObject.SetActive(true);
+            btnrStart.gameObject.SetActive(false);
+
             crosshair.Hide(true);
         }
 
@@ -84,6 +164,7 @@ namespace cowsins2D
             isPaused = false;
             if (playerControl != null) playerControl.CheckIfCanGrantControl();
             if (crosshair.CheckIfCanShow()) crosshair.Show();
+
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Confined;
         }
