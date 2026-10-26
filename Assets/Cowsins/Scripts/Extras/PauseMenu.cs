@@ -88,7 +88,8 @@ namespace cowsins2D
         }
         public void GoResources()
         {
-            Application.OpenURL("https://www.google.com");
+            //Application.OpenURL("https://www.google.com");
+            DialogMenu.Instance.ResourcesCutScene();
         }
 
         private void Start()

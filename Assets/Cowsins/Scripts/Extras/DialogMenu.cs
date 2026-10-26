@@ -155,14 +155,14 @@ namespace cowsins2D
         {
             Debug.Log($" Quest ==> {count} ");
 
-            //  Ã³ï¿½ï¿½ ï¿½Ï¶ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½, Æ©ï¿½ä¸®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ 
+            //  Ã³À½ ÀÏ¶§ ÀÎÆ®·Î, Æ©Åä¸®¾ó º¸¿©ÁÖ±â 
             if (count == 0)
             {   
                 isClear = false;                
                 //ShowDialog(listDialogintro);
             }
 
-            // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾Ë·Î±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½
+            // ¸ðµç ¾ÆÀÌÅÛÀ» ´Ù ¸ð¾ÒÀ»¶§ ¸¶Áö¸· ´ÙÀÌ¾Ë·Î±× º¸¿©ÁÖ±â
             //if (count == needclearCount)
             ////if (count == 1)
             //{  
@@ -200,18 +200,18 @@ namespace cowsins2D
             switch (command.ToLower())
             {
                 case "@look":
-                    {   Debug.Log("LOOK ï¿½ï¿½ï¿½ï¿½");
+                    {   Debug.Log("LOOK ½ÃÀÛ");
                         controllerCamera.ChangeCameraOffset(new Vector3(0.0f,1.44f,-10.0f) ) ;
                         break;                    
                     }
                 case "@lookend":
                     {
-                        Debug.Log("LOOK ï¿½ï¿½ï¿½ï¿½");
+                        Debug.Log("LOOK Á¾·á");
                         controllerCamera.RecoverCameraOffset();
                         break;
                     }
                 default:
-                    Debug.LogWarning($"ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ command: {command}");
+                    Debug.LogWarning($"¾Ë ¼ö ¾ø´Â command: {command}");
                     break;
             }
         }
@@ -228,7 +228,7 @@ namespace cowsins2D
                 }
         }
 
-         // Ã³ï¿½ï¿½ ï¿½ï¿½È­Ã¢ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ ï¿½ï¿½ï¿½ï¿½.
+         // Ã³À½ ´ëÈ­Ã¢º¸¿©ÁÖ±â ½ÃÀÛ.
         public void ShowDialog(List<DialogForm> form, bool bisStart = true)
         {
             story = form;
@@ -266,7 +266,7 @@ namespace cowsins2D
             Textbox.StepDialog(form, this);
         }
 
-        // ï¿½ï¿½È­Ã¢ ï¿½ï¿½
+        // ´ëÈ­Ã¢ ³¡
         public void EndDialog(DialogTextBox textBox)
         {
             textBox.Hide();
@@ -306,33 +306,49 @@ namespace cowsins2D
 
             videoPlayer.Activity = true;
 
-            //https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2FlastScene.mp4?alt=media&token=b32f4f31-0855-4e5f-b881-29d9ff1e9f6e
-            //https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2FbabyjoeVideo.mp4?alt=media&token=8195f766-4c49-4d17-8a22-742af639fd8d
-            //https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2Fending.mp4?alt=media&token=39562907-a115-4430-b2da-9f0ad42fd99f
+        //https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2FlastScene.mp4?alt=media&token=b32f4f31-0855-4e5f-b881-29d9ff1e9f6e
+        //https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2FbabyjoeVideo.mp4?alt=media&token=8195f766-4c49-4d17-8a22-742af639fd8d
+        //https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2Fending.mp4?alt=media&token=39562907-a115-4430-b2da-9f0ad42fd99f
+        //https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2Fending_sd.mp4?alt=media&token=21d36444-3cd1-41f5-9480-6786e0420055
+        //https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2Fending_sd.mp4?alt=media&token=e47ce83a-74a8-4250-82f1-e2f8b017659a
 
-            //https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2Fending_sd.mp4?alt=media&token=21d36444-3cd1-41f5-9480-6786e0420055
+        
 
+            videoPlayer.Stop();                                 
+            videoPlayer.PlayUrl("https://cdn.jsdelivr.net/gh/syjang120-maker/BabyJoeEndingCredit@main/ending%20credit.mp4");
+            yield return new WaitForSeconds(6.0f);
 
-            videoPlayer.Stop();
-            videoPlayer.PlayUrl("https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2Fending_sd.mp4?alt=media&token=21d36444-3cd1-41f5-9480-6786e0420055");            yield return new WaitForSeconds(6.0f);
-
-            // 3ï¿½ï¿½ ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½Æ¹ï¿½ ï¿½Ô·ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            // 3ÃÊ ÈÄ ¶Ç´Â ¾Æ¹« ÀÔ·Â ½Ã ´ÙÀ½À¸·Î
             yield return WaitForSecondsOrAnyInput(30.0f);           
             videoPlayer.Stop();
             yield return new WaitForSeconds(2.0f);
 
-            //yield return new WaitForSeconds(1.0f);
-
-            //videoPlayer.PlayUrl("https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2Fjoeplay.mp4?alt=media&token=67c9e8aa-0e33-4ba3-b99c-0b7be6f0942e");
-            //yield return new WaitForSeconds(5.0f);
-
-            //// 3ï¿½ï¿½ ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½Æ¹ï¿½ ï¿½Ô·ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-            //yield return WaitForSecondsOrAnyInput(10.0f);
-
-            //videoPlayer.Stop();
-
             var scenename = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene(scenename);
+        }
+
+        IEnumerator coResourcesCutScene()
+        {
+            yield return new WaitForSeconds(1.0f);
+            videoPlayer.Activity = true;
+
+            videoPlayer.Stop();
+            //videoPlayer.PlayUrl("https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2Fresources.mp4?alt=media&token=46702710-064b-48c9-a375-832d1dc57e9d");
+            videoPlayer.PlayUrl("https://cdn.jsdelivr.net/gh/syjang120-maker/BabyJoeResources@main/okokokokok.mp4");
+        
+            yield return new WaitForSeconds(6.0f);
+
+            // 3ÃÊ ÈÄ ¶Ç´Â ¾Æ¹« ÀÔ·Â ½Ã ´ÙÀ½À¸·Î
+            yield return WaitForSecondsOrAnyInput(30.0f);
+            videoPlayer.Stop();
+            yield return new WaitForSeconds(2.0f);
+            videoPlayer.Activity = false;
+
+        }
+
+        public void ResourcesCutScene()
+        {
+            StartCoroutine(coResourcesCutScene());
         }
 
         IEnumerator WaitForSecondsOrAnyInput(float waitTime)

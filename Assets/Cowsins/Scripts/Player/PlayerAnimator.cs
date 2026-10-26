@@ -46,6 +46,8 @@ namespace cowsins2D
             player.PlayerMovementEvents.onLand.AddListener(LandAnim);
             playerControl.PlayerControlEvents.onLoseControl.AddListener(IdleAnim);
             playerStats.PlayerStatsEvents.onDie.AddListener(DieAnim);
+            playerStats.PlayerStatsEvents.onDamage.AddListener(DieAnim);
+
         }
 
         private void OnDisable()
@@ -65,6 +67,7 @@ namespace cowsins2D
             player.PlayerMovementEvents.onLand.RemoveListener(LandAnim);
             playerControl.PlayerControlEvents.onLoseControl.RemoveListener(IdleAnim);
             playerStats.PlayerStatsEvents.onDie.RemoveListener(DieAnim);
+            playerStats.PlayerStatsEvents.onDamage.RemoveListener(DieAnim);
         }
 
         public void IdleAnim()
