@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5972c1f503cf52e46884f0362773e98d
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Prefabs/DragAndDrop/3D/3DGenericItemPickUp.prefab
+  uploadId: 875044

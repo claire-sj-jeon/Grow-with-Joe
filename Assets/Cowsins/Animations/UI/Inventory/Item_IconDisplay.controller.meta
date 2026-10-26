@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8007cb615a7ee6d4da1fe9a348124280
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Animations/UI/Inventory/Item_IconDisplay.controller
+  uploadId: 875044

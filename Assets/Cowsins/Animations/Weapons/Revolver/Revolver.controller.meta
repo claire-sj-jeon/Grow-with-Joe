@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4eea603b95b8efa458d937a9f5aec00a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Animations/Weapons/Revolver/Revolver.controller
+  uploadId: 875044

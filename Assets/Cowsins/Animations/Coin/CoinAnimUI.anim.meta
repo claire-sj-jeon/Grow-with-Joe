@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: df135305683b69542825bcd171f6f2f7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Animations/Coin/CoinAnimUI.anim
+  uploadId: 875044

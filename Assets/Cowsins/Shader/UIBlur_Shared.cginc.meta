@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ab685af8bd52b4f4484019825efca399
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Shader/UIBlur_Shared.cginc
+  uploadId: 875044

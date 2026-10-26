@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: cf2b8fc9a733a4444aaab80bd3368181
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Scripts/UI/Crosshair.cs
+  uploadId: 875044

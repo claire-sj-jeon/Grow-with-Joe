@@ -279,7 +279,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 131
+  controlID: 79
   draggingID: 0
 --- !u!114 &12
 MonoBehaviour:
@@ -380,8 +380,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 581.5
+    x: 209
+    y: 646.5
     width: 786
     height: 115.5
   m_SerializedDataModeController:
@@ -974,7 +974,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.12742472, y: 0.023799114, z: -0.003057574, w: 0.9915516}
     speed: 2
-    m_Value: {x: -0.12742472, y: -0.023799116, z: 0.003057574, w: -0.9915516}
+    m_Value: {x: 0.12742554, y: 0.023799265, z: -0.0030575935, w: 0.9915579}
   m_Size:
     m_Target: 37.197495
     speed: 2
@@ -1033,8 +1033,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Game\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 24
+    x: 209
+    y: 89
     width: 786
     height: 531.5
   m_SerializedDataModeController:
@@ -1332,8 +1332,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Console\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 723
+    x: 209
+    y: 788
     width: 786
     height: 125
   m_SerializedDataModeController:
@@ -1368,8 +1368,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Project\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1
-    y: 24
+    x: 996
+    y: 89
     width: 294
     height: 369
   m_SerializedDataModeController:
@@ -1394,7 +1394,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/_scripts/image/tutorials
+    - Assets/_scripts/image/quests
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1404,16 +1404,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/_scripts/image/tutorials
+  - Assets/_scripts/image/quests
   m_LastFoldersGridSize: 16
   m_LastProjectPath: /Users/marco/Downloads/GitHub/P-Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 138.99963}
-    m_SelectedIDs: ece70000
-    m_LastClickedID: 59372
-    m_ExpandedIDs: 0000000050e7000052e7000054e7000056e7000058e700005ae700005ce700005ee7000060e7000062e7000064e7000066e7000068e700006ae700006ce700006ee7000070e70000
+    m_SelectedIDs: 04e80000
+    m_LastClickedID: 59396
+    m_ExpandedIDs: 0000000050e7000052e7000054e7000056e7000058e700005ae700005ce700005ee7000060e7000062e7000064e7000066e7000068e700006ae700006ce700006ee7000070e7000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1521,8 +1521,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Hierarchy\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1
-    y: 419
+    x: 996
+    y: 484
     width: 294
     height: 429
   m_SerializedDataModeController:
@@ -1539,9 +1539,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 32e90000
       m_LastClickedID: 0
-      m_ExpandedIDs: 0aefffffd2faffff7ee9000096ea00002ced00007aee0000b0ef0000
+      m_ExpandedIDs: 5cf9ffff28d600006ed90000a4da0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1587,8 +1587,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1084
-    y: 24
+    x: 1292
+    y: 89
     width: 387
     height: 824
   m_SerializedDataModeController:
