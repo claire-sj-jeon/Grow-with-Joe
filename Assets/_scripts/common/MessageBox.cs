@@ -36,6 +36,7 @@ public class MessageBox : MonoBehaviour
 
     public void Show(string message) => Show(message, defaultDuration);
 
+    // duration 이 0 이하이면 Hide 를 부를 때까지 떠 있다
     public void Show(string message, float duration)
     {
         var body = Body;
@@ -51,7 +52,7 @@ public class MessageBox : MonoBehaviour
         if (text != null) text.text = message;
 
         RegisterFunction.instance.Remove(hideTimer);
-        hideTimer = RegisterFunction.SingleCall(duration, Hide);
+        hideTimer = duration > 0.0f ? RegisterFunction.SingleCall(duration, Hide) : null;
     }
 
     public void Hide()

@@ -13,13 +13,27 @@ namespace cowsins2D
 
         public event Action onDrop, onJump, onJumpCut, onDash, onOpenInventory, onPause;
 
+        // 팝업 메뉴를 키보드(W/A 이전, S/D 다음, Enter 누르기)로 조작하는 기능. 끄면 마우스/터치로만 다룬다.
+        [SerializeField] private bool uiKeyboardNavigation = true;
+
+        public bool UIKeyboardNavigation
+        {
+            get => uiKeyboardNavigation;
+            set => UIKeyboardNavigator.Enabled = uiKeyboardNavigation = value;
+        }
+
         private void Awake()
         {
             if (inputActions == null)  inputActions = new PlayerActions();
         }
 
+        // 플레이 중 인스펙터에서 체크를 바꿔도 바로 반영되게 한다
+        private void OnValidate() => UIKeyboardNavigator.Enabled = uiKeyboardNavigation;
+
         private void OnEnable()
         {
+            UIKeyboardNavigator.Enabled = uiKeyboardNavigation;
+
             // Initialize player inputs
             inputActions.Enable();
 
@@ -49,16 +63,19 @@ namespace cowsins2D
         }
 
         // 팝업이 키보드를 가져간 동안(UIKeyboardNavigator.IsActive)에는 WASD 와 Enter 가 UI 조작에만 쓰인다.
-        // 일시정지(ESC)는 막지 않는다.
-        private void OnDropStarted(InputAction.CallbackContext ctx) { if (!UIKeyboardNavigator.IsActive) onDrop?.Invoke(); }
-        private void OnJumpStarted(InputAction.CallbackContext ctx) { if (!UIKeyboardNavigator.IsActive) onJump?.Invoke(); }
+        // 재시작 확인창(RestartConfirm)이 떠 있는 동안에는 아무 키나 "닫기" 이므로 캐릭터 입력과 일시정지까지 막는다.
+        private static bool GameplayBlocked => UIKeyboardNavigator.IsActive || RestartConfirm.IsOpen;
+
+        // 일시정지(ESC)는 키보드 팝업 중에는 막지 않는다.
+        private void OnDropStarted(InputAction.CallbackContext ctx) { if (!GameplayBlocked) onDrop?.Invoke(); }
+        private void OnJumpStarted(InputAction.CallbackContext ctx) { if (!GameplayBlocked) onJump?.Invoke(); }
         private void OnJumpCanceled(InputAction.CallbackContext ctx) => onJumpCut?.Invoke();
-        private void OnDashStarted(InputAction.CallbackContext ctx) { if (!UIKeyboardNavigator.IsActive) onDash?.Invoke(); }
-        private void OnOpenInventoryStarted(InputAction.CallbackContext ctx) { if (!UIKeyboardNavigator.IsActive) onOpenInventory?.Invoke(); }
-        private void OnPauseStarted(InputAction.CallbackContext ctx) => onPause?.Invoke();
+        private void OnDashStarted(InputAction.CallbackContext ctx) { if (!GameplayBlocked) onDash?.Invoke(); }
+        private void OnOpenInventoryStarted(InputAction.CallbackContext ctx) { if (!GameplayBlocked) onOpenInventory?.Invoke(); }
+        private void OnPauseStarted(InputAction.CallbackContext ctx) { if (!RestartConfirm.IsOpen) onPause?.Invoke(); }
 
         // Update inputs in realtime
-        private void Update() => PlayerInputs = UIKeyboardNavigator.IsActive ? BlockedInputs() : ReceiveInputs();
+        private void Update() => PlayerInputs = GameplayBlocked ? BlockedInputs() : ReceiveInputs();
 
         // 이동 · 점프 · 웅크리기 등은 모두 0 으로 두고 마우스 위치와 일시정지만 살린다
         private PlayerInputs BlockedInputs()
@@ -66,7 +83,7 @@ namespace cowsins2D
             return new PlayerInputs
             {
                 MousePos = inputActions.GameControls.MousePosition.ReadValue<Vector2>(),
-                Pausing = inputActions.GameControls.Pause.WasPressedThisFrame()
+                Pausing = !RestartConfirm.IsOpen && inputActions.GameControls.Pause.WasPressedThisFrame()
             };
         }
 

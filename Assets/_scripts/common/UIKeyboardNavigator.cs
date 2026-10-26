@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 // 팝업(메뉴, 대화창)이 떠 있는 동안 키보드만으로 버튼을 고르고 누르게 한다.
 // W / A : 이전 버튼, S / D : 다음 버튼, Enter / O : 누르기
+// Enabled 가 false 면(InputManager 의 옵션) 아무것도 하지 않는다.
 // 팝업은 RegisterScope 로 등록한다. 여러 개가 열려 있으면 priority 가 큰 쪽이 키를 가져간다.
 public class UIKeyboardNavigator : MonoBehaviour
 {
@@ -23,6 +24,10 @@ public class UIKeyboardNavigator : MonoBehaviour
 
     // 팝업이 키보드를 가져간 상태. InputManager 가 이 동안 캐릭터 입력을 막는다.
     public static bool IsActive { get; private set; }
+
+    // 키보드 UI 조작 사용 여부. InputManager 의 옵션으로 켜고 끈다.
+    // 끄면 포커스 표시도 사라지고 키 입력도 캐릭터 쪽으로 그대로 간다.
+    public static bool Enabled { get; set; } = true;
 
     [SerializeField] Color frameColor = new Color(1.0f, 0.62f, 0.1f, 1.0f);
     [SerializeField] float frameThickness = 8.0f;
@@ -46,6 +51,7 @@ public class UIKeyboardNavigator : MonoBehaviour
         scopes.Clear();
         instance = null;
         IsActive = false;
+        Enabled = true;
     }
 
     public static void RegisterScope(object owner, Transform root, Func<bool> isOpen, int priority = 0)
@@ -76,7 +82,7 @@ public class UIKeyboardNavigator : MonoBehaviour
 
     void Update()
     {
-        var scope = FindOpenScope();
+        var scope = Enabled ? FindOpenScope() : null;
         IsActive = scope != null;
 
         // EventSystem 자체의 키보드 탐색(WASD 이동, Enter 제출)이 살아 있으면 같은 키로 버튼이 두 번 눌린다.
@@ -124,7 +130,10 @@ public class UIKeyboardNavigator : MonoBehaviour
             Submit(focused);
     }
 
-    Scope FindOpenScope()
+    // 키보드 조작 옵션(Enabled)과 상관없이 등록된 팝업이 하나라도 떠 있는지
+    public static bool AnyPopupOpen => FindOpenScope() != null;
+
+    static Scope FindOpenScope()
     {
         Scope best = null;
         for (int i = scopes.Count - 1; i >= 0; --i)

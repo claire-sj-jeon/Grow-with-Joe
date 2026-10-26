@@ -235,8 +235,8 @@ namespace cowsins2D
             // 키보드가 없는 모바일/WebGL 환경에서는 Keyboard.current 가 null 이라 매 프레임 예외가 난다.
             if (Keyboard.current == null) return;
 
-            // R : 대화 JSON 전체 재로드
-            if (Keyboard.current.rKey.wasPressedThisFrame)
+            // F5 : 대화 JSON 전체 재로드 (R 은 재시작 확인창이 쓴다)
+            if (Keyboard.current.f5Key.wasPressedThisFrame)
                 ReloadAllDialogs();
 
             if (Keyboard.current.digit0Key.wasPressedThisFrame)

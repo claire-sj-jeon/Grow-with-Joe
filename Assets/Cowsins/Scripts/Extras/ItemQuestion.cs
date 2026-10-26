@@ -110,7 +110,7 @@ namespace cowsins2D
             if (fromJson != null && fromJson.Count > 0) listDialog = fromJson;
         }
 
-        // DialogMenu.ReloadAllDialogs (개발용 R 키) 가 호출한다.
+        // DialogMenu.ReloadAllDialogs (개발용 F5 키) 가 호출한다.
         // 캐시를 비우는 쪽이 호출자이므로 여기서는 다시 읽기만 한다.
         public void ReloadDialog() => ResolveDialogFromJson();
 
