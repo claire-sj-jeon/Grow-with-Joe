@@ -1,4 +1,4 @@
-
+ï»¿
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
@@ -34,6 +34,11 @@ namespace cowsins2D
 
         [SerializeField]
         private int needclearCount;
+
+        // JSON íŒŒì¼ ê²½ë¡œ (Assets/Resources/ ê¸°ì¤€, í™•ì¥ì ì œì™¸)
+        [SerializeField]
+        private string dialogJsonPath = "Dialogs/dialogs";
+
         [SerializeField]
         List<DialogForm> listDialogintro;
 
@@ -74,12 +79,31 @@ namespace cowsins2D
 
         }
 
+        void LoadDialogsFromJson()
+        {
+            var data = DialogJsonLoader.Load(dialogJsonPath);
+            if (data == null) return;
+
+            if (data.intro != null && data.intro.Count > 0)
+                listDialogintro = DialogJsonLoader.ToDialogForms(data.intro);
+
+            if (data.tutorial != null && data.tutorial.Count > 0)
+                listDialogtutorial = DialogJsonLoader.ToDialogForms(data.tutorial);
+
+            if (data.end != null && data.end.Count > 0)
+                listDialogEnd = DialogJsonLoader.ToDialogForms(data.end);
+
+            Debug.Log($"[DialogMenu] JSON ë¡œë“œ ì™„ë£Œ - intro:{listDialogintro?.Count} tutorial:{listDialogtutorial?.Count} end:{listDialogEnd?.Count}");
+        }
+
         void Start()
         {
             playerControl = playerDependencies.PlayerControl;
             uiController = playerDependencies._UIController;
             playerState = playerDependencies.PlayerStats;
             crosshair = playerDependencies.Crosshair;
+
+            LoadDialogsFromJson();
 
             
 
@@ -117,6 +141,11 @@ namespace cowsins2D
         }
         void Update()
         {
+#if UNITY_EDITOR
+            // ê°œë°œìš© ë‹¨ì¶•í‚¤. ë¹Œë“œì— í¬í•¨ë˜ë©´ í”Œë ˆì´ì–´ê°€ ì”¬ ë¦¬ë¡œë“œ/ì»·ì‹ ì„ ì„ì˜ë¡œ íŠ¸ë¦¬ê±°í•  ìˆ˜ ìˆê³ ,
+            // í‚¤ë³´ë“œê°€ ì—†ëŠ” ëª¨ë°”ì¼Â·WebGL í™˜ê²½ì—ì„œëŠ” Keyboard.current ê°€ null ì´ë¼ ë§¤ í”„ë ˆì„ ì˜ˆì™¸ê°€ ë‚œë‹¤.
+            if (Keyboard.current == null) return;
+
             if (Keyboard.current.digit0Key.wasPressedThisFrame)
             {
                 PauseMenu.TutorialState = 0;
@@ -143,8 +172,9 @@ namespace cowsins2D
                 
 
                 RegisterFunction.SingleCall(5.0f, () => ShowDialog(listDialogEnd));
-                //videoPlayer.PlayUrl("https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2Fjoeplay.mp4?alt=media&token=67c9e8aa-0e33-4ba3-b99c-0b7be6f0942e");                
+                //videoPlayer.PlayUrl("https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2Fjoeplay.mp4?alt=media&token=67c9e8aa-0e33-4ba3-b99c-0b7be6f0942e");
             }
+#endif
         }
         private void OnDestroy()
         {
@@ -155,14 +185,14 @@ namespace cowsins2D
         {
             Debug.Log($" Quest ==> {count} ");
 
-            //  Ã³À½ ÀÏ¶§ ÀÎÆ®·Î, Æ©Åä¸®¾ó º¸¿©ÁÖ±â 
+            //  ì²˜ìŒ ì¼ë•Œ ì¸íŠ¸ë¡œ, íŠœí† ë¦¬ì–¼ ë³´ì—¬ì£¼ê¸° 
             if (count == 0)
             {   
                 isClear = false;                
                 //ShowDialog(listDialogintro);
             }
 
-            // ¸ğµç ¾ÆÀÌÅÛÀ» ´Ù ¸ğ¾ÒÀ»¶§ ¸¶Áö¸· ´ÙÀÌ¾Ë·Î±× º¸¿©ÁÖ±â
+            // ëª¨ë“  ì•„ì´í…œì„ ë‹¤ ëª¨ì•˜ì„ë•Œ ë§ˆì§€ë§‰ ë‹¤ì´ì•Œë¡œê·¸ ë³´ì—¬ì£¼ê¸°
             //if (count == needclearCount)
             ////if (count == 1)
             //{  
@@ -200,18 +230,18 @@ namespace cowsins2D
             switch (command.ToLower())
             {
                 case "@look":
-                    {   Debug.Log("LOOK ½ÃÀÛ");
+                    {   Debug.Log("LOOK ì‹œì‘");
                         controllerCamera.ChangeCameraOffset(new Vector3(0.0f,1.44f,-10.0f) ) ;
                         break;                    
                     }
                 case "@lookend":
                     {
-                        Debug.Log("LOOK Á¾·á");
+                        Debug.Log("LOOK ì¢…ë£Œ");
                         controllerCamera.RecoverCameraOffset();
                         break;
                     }
                 default:
-                    Debug.LogWarning($"¾Ë ¼ö ¾ø´Â command: {command}");
+                    Debug.LogWarning($"ì•Œ ìˆ˜ ì—†ëŠ” command: {command}");
                     break;
             }
         }
@@ -228,7 +258,7 @@ namespace cowsins2D
                 }
         }
 
-         // Ã³À½ ´ëÈ­Ã¢º¸¿©ÁÖ±â ½ÃÀÛ.
+         // ì²˜ìŒ ëŒ€í™”ì°½ë³´ì—¬ì£¼ê¸° ì‹œì‘.
         public void ShowDialog(List<DialogForm> form, bool bisStart = true)
         {
             story = form;
@@ -266,7 +296,7 @@ namespace cowsins2D
             Textbox.StepDialog(form, this);
         }
 
-        // ´ëÈ­Ã¢ ³¡
+        // ëŒ€í™”ì°½ ë
         public void EndDialog(DialogTextBox textBox)
         {
             textBox.Hide();
@@ -318,7 +348,7 @@ namespace cowsins2D
             videoPlayer.PlayUrl("https://cdn.jsdelivr.net/gh/syjang120-maker/BabyJoeEndingCredit@main/ending%20credit.mp4");
             yield return new WaitForSeconds(6.0f);
 
-            // 3ÃÊ ÈÄ ¶Ç´Â ¾Æ¹« ÀÔ·Â ½Ã ´ÙÀ½À¸·Î
+            // 3ì´ˆ í›„ ë˜ëŠ” ì•„ë¬´ ì…ë ¥ ì‹œ ë‹¤ìŒìœ¼ë¡œ
             yield return WaitForSecondsOrAnyInput(30.0f);           
             videoPlayer.Stop();
             yield return new WaitForSeconds(2.0f);
@@ -338,7 +368,7 @@ namespace cowsins2D
         
             yield return new WaitForSeconds(6.0f);
 
-            // 3ÃÊ ÈÄ ¶Ç´Â ¾Æ¹« ÀÔ·Â ½Ã ´ÙÀ½À¸·Î
+            // 3ì´ˆ í›„ ë˜ëŠ” ì•„ë¬´ ì…ë ¥ ì‹œ ë‹¤ìŒìœ¼ë¡œ
             yield return WaitForSecondsOrAnyInput(30.0f);
             videoPlayer.Stop();
             yield return new WaitForSeconds(2.0f);

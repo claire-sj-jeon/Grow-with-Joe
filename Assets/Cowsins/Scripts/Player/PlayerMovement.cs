@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
@@ -88,7 +88,7 @@ namespace cowsins2D
         
         [SerializeField] private float jumpHangAccelerationMult;
         [Tooltip("Speed multiplier on the apex of the jump.")] [SerializeField] private float jumpHangMaxSpeedMult;
-        [Tooltip("When falling, you can press �S� to fall faster. Adjust the multiplier here.")] [SerializeField] private float fastFallMultiplier;
+        [Tooltip("When falling, you can press 'S' to fall faster. Adjust the multiplier here.")] [SerializeField] private float fastFallMultiplier;
 
         [SerializeField] private bool allowWallJump;
         
@@ -135,7 +135,7 @@ namespace cowsins2D
 
         [Tooltip("When you stopped dashing, time to being able to perform a new dash ( to avoid dash clipping )")] [SerializeField, Min(.1f)] private float dashInterval;
 
-        [Tooltip("If enabled, the player won�t be able to receive damage while dashing."), SerializeField] private bool invincibleWhileDashing;
+        [Tooltip("If enabled, the player won't be able to receive damage while dashing."), SerializeField] private bool invincibleWhileDashing;
 
         [SerializeField] private bool canGlide;
 
@@ -580,7 +580,12 @@ namespace cowsins2D
         private void PreventUnvoluntarySliding()
         {
             // Removes gravity when grounded and idle on a slope to prevent sliding down.
-            if (groundAngle < maxFloorAngle && IsGrounded && inputManager.PlayerInputs.HorizontalMovement == 0 && !isJumping && !isDashing && !ladderAvailable)
+            // rb.linearVelocity.y 조건 추가: 아직 낙하 속도가 남아 있으면 적용 금지.
+            // OverlapBox가 물리 충돌보다 먼저 땅을 감지하는 경우 착지 전 속도를 제거해
+            // 캐릭터가 공중에 떠 있다가 이동키를 눌러야만 내려오는 버그를 방지한다.
+            if (groundAngle < maxFloorAngle && IsGrounded && inputManager.PlayerInputs.HorizontalMovement == 0
+                && !isJumping && !isDashing && !ladderAvailable
+                && rb.linearVelocity.y >= -0.1f)
             {
                 rb.gravityScale = 0;
                 rb.linearVelocity = Vector2.zero;

@@ -14,9 +14,7 @@ namespace cowsins2D
         float moveSpeed = 1.0f; // Speed of the movement
 
         [SerializeField]
-        float moveDistance = 1.0f; // Distance to move up and down        
-
-        [SerializeField]       
+        float moveDistance = 1.0f; // Distance to move up and down                
 
         private void OnEnable()
         {
