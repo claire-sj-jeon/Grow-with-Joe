@@ -23136,7 +23136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2775039833176612092, guid: 4f3e9e1e9f8f85041b0df700969cac10, type: 3}
       propertyPath: listDialog.Array.data[3].choices.Array.data[2].text
-      value: A group of <i>hadrosaurs</i> across the river
+      value: A group of <i>Gryposaurus</i> across the river
       objectReference: {fileID: 0}
     - target: {fileID: 2775039833176612092, guid: 4f3e9e1e9f8f85041b0df700969cac10, type: 3}
       propertyPath: listDialog.Array.data[3].choices.Array.data[0].sprite
@@ -40152,7 +40152,7 @@ PrefabInstance:
     - target: {fileID: 2775039833176612092, guid: 4f3e9e1e9f8f85041b0df700969cac10, type: 3}
       propertyPath: listDialog.Array.data[2].choices.Array.data[1].afterDialogs.Array.data[2].spritePortrait
       value: 
-      objectReference: {fileID: 21300000, guid: 6103bb4126bdc63448e213233d047dc5, type: 3}
+      objectReference: {fileID: 21300000, guid: 76dc7a5da9fe18d43acd95b69297a39f, type: 3}
     - target: {fileID: 2775039833176612092, guid: 4f3e9e1e9f8f85041b0df700969cac10, type: 3}
       propertyPath: listDialog.Array.data[2].choices.Array.data[2].afterDialogs.Array.data[1].spritePortrait
       value: 
@@ -42674,7 +42674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2775039833176612092, guid: 4f3e9e1e9f8f85041b0df700969cac10, type: 3}
       propertyPath: listDialog.Array.data[3].textCaption
-      value: What would be the best meal for <color=orange>Baby Joe </color>
+      value: What would be the best meal for <color=orange>Baby Joe? </color>
       objectReference: {fileID: 0}
     - target: {fileID: 2775039833176612092, guid: 4f3e9e1e9f8f85041b0df700969cac10, type: 3}
       propertyPath: listDialog.Array.data[0].spritePortrait
