@@ -1,5 +1,7 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -44,6 +46,16 @@ namespace cowsins2D
         [FormerlySerializedAs("btnrSceneBehind")]
         [SerializeField] Button btnSceneBehind;
         [SerializeField] Button btnReturnToMain;
+
+        [SerializeField, Tooltip("버튼을 누를 때 커지는 비율. 0 이면 연출하지 않는다.")]
+        float pressScalePunch = 0.15f;
+
+        [SerializeField, Tooltip("커졌다 원래 크기로 돌아오기까지의 시간(초).")]
+        float pressScaleTime = 0.2f;
+
+        // 버튼마다 진행 중인 연출을 하나만 유지한다. 연타로 곡선이 겹치면 스케일이 계속 커진다.
+        readonly Dictionary<Button, RegisterFunction.Element> pressEffects
+            = new Dictionary<Button, RegisterFunction.Element>();
 
         public enum MenuMode
         {
@@ -172,10 +184,16 @@ namespace cowsins2D
 
             Debug.Log($"Tutorial State ==>{TutorialState} ");
 
+            AddPressEffect(btnrResources);
+            AddPressEffect(btnSceneBehind);
+            AddPressEffect(btnReturnToMain);
+
+
             // 엔딩 전용 버튼 3종은 위의 Pause() → ApplyMenuMode() 가 이미 감췄다
             SetActive(btnrResume, false);
             SetActive(btnrStart, true);
-            SetActive(btnrTutorial, TutorialState == 0);
+            //SetActive(btnrTutorial, TutorialState == 0);
+            SetActive(btnrTutorial, true);
 
             // GameAgain 으로 들어온 판은 타이틀을 건너뛴다. Pause() 로 떠 있는 메뉴를 여기서 풀어 준다.
             if (autoStartOnLoad)
@@ -184,6 +202,41 @@ namespace cowsins2D
                 UnPause();
                 DialogMenu.Instance.StartIntroduceDialog();
             }
+        }
+
+        // Button 에는 눌린 순간을 알리는 이벤트가 없어 EventTrigger 를 코드로 붙인다.
+        // onClick(손을 뗄 때)에 걸면 곧바로 씬을 읽는 버튼에서는 연출이 한 프레임도 보이지 않는다.
+        void AddPressEffect(Button button)
+        {
+            if (button == null) return;
+
+            var target = button.transform;
+
+            // 연출 도중에 다시 읽으면 커진 값을 기준으로 잡으므로 눌리기 전 크기를 여기서 기억한다.
+            var baseScale = target.localScale;
+
+            var trigger = button.GetComponent<EventTrigger>();
+            if (trigger == null) trigger = button.gameObject.AddComponent<EventTrigger>();
+
+            var entry = new EventTrigger.Entry { eventID = EventTriggerType.PointerDown };
+            entry.callback.AddListener(_ => PlayPressEffect(button, target, baseScale));
+            trigger.triggers.Add(entry);
+        }
+
+        void PlayPressEffect(Button button, Transform target, Vector3 baseScale)
+        {
+            if (pressScalePunch <= 0.0f || pressScaleTime <= 0.0f) return;
+
+            if (pressEffects.TryGetValue(button, out var running)) running?.Remove();
+
+            pressEffects[button] = RegisterFunction.instance.Single(
+                RegisterFunction.Loop(pressScaleTime, pressScalePunch),
+                (element, value) => target.localScale = baseScale * (1.0f + value),
+                (element, count) =>
+                {   target.localScale = baseScale;
+                    pressEffects.Remove(button);
+                },
+                "menuPress");
         }
 
         // btnReturnToMain 처럼 씬에서 아직 연결되지 않았을 수 있는 참조가 있어 널 가드를 둔다.
@@ -195,12 +248,18 @@ namespace cowsins2D
         {
             if (isPaused)
             {
+                if (menu.alpha < 1)
+                {
+                    //menu.alpha += Time.deltaTime * fadeSpeed;
+                    menu.alpha = 1.0f;
+                }
+
                 if (!menu.gameObject.activeSelf)
                 {
                     menu.gameObject.SetActive(true);
                     menu.alpha = 0;
                 }
-                if (menu.alpha < 1) menu.alpha += Time.deltaTime * fadeSpeed;
+
             }
             else
             {
@@ -240,6 +299,8 @@ namespace cowsins2D
             ApplyMenuMode();
 
             crosshair.Hide(true);
+
+            Debug.Log("==PauseMenuCall===");
         }
 
         void ApplyMenuMode()
@@ -248,6 +309,7 @@ namespace cowsins2D
 
             SetActive(btnrResume, !sceneBehind);
             SetActive(btnrStart, false);
+            SetActive(btnrTutorial, true);
 
             // 이 3개는 SceneBehind 에서만 보인다
             SetActive(btnrResources, sceneBehind);

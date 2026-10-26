@@ -142,6 +142,8 @@ public class VideoRawImagePlayer : MonoBehaviour
 
     public void PlayUrl(string url)
     {
+        Debug.Log($"PlayUrl==> {url}");
+
         if (string.IsNullOrWhiteSpace(url))
         {
             Debug.LogWarning("PlayUrl 실패: url 이 비어있습니다.");

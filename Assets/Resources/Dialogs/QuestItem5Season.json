@@ -54,12 +54,22 @@
         "afterDialogs": [
           {
             "type": "PortraitAndText",
-            "textCaption": "Correct! Following the herd leads to abundant food and safer conditions.",
+            "textCaption": "Correct! Paleontologists are still trying to figure out if or why some dinosaurs migrated.",
             "textName": "Dr. Farke",
             "spritePortrait": "Portrait/dr",
             "spriteDescript": "",
             "choices": []
           },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "But as a juvenile, <color=orange>Baby Joe</color>’s best chance of survival is to stay with the group and follow the lead of the adult <i>Parasaurolophus</i>.",
+            "textName": "Dr. Farke",
+            "spritePortrait": "Portrait/dr",
+            "spriteDescript": "",
+            "choices": []
+          },
+
+
           {
             "type": "PortraitAndText",
             "textCaption": "There’s so much to eat! I love my group!",

@@ -22,6 +22,9 @@ namespace cowsins2D
         [SerializeField, Tooltip("퀘스트 조건이 채워져 나타날 때 카메라가 이 아이템을 비추는 시간(초). 0 이면 비추지 않는다.")]
         float revealFocusTime = 2.0f;
 
+        [SerializeField, Tooltip("퀘스트 조건이 채워져 나타날 때 띄울 메시지. 비워두면 메시지를 띄우지 않는다.")]
+        string revealMessage;
+
         [SerializeField, Tooltip("dialogs.json 의 quests 키. 비워두면 게임오브젝트 이름을 사용한다.")]
         string dialogId;
 
@@ -54,7 +57,17 @@ namespace cowsins2D
                 {
                     activity = true;
                     ShowSelfWithCamera();
+                    ShowRevealMessage();
                 }
+        }
+
+        // 인스펙터 문자열이 비어 있으면 아무것도 띄우지 않는다. 안내가 필요한 아이템만 켜는 옵션이다.
+        void ShowRevealMessage()
+        {
+            if (string.IsNullOrWhiteSpace(revealMessage)) return;
+            if (MessageBox.Instance == null) return;
+
+            MessageBox.Instance.Show(revealMessage);
         }
 
         // 새로 나타난 아이템이 어디에 생겼는지 잠깐 비춰 준다.

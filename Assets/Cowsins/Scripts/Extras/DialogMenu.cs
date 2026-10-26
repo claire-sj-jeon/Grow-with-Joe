@@ -12,9 +12,7 @@ using UnityEngine.SceneManagement;
 namespace cowsins2D
 {
     public class DialogMenu : MonoBehaviour
-    {
-
-        
+    {        
 #if UNITY_WEBGL && !UNITY_EDITOR
     [DllImport("__Internal")]
     private static extern void WebEnterFullscreen();
@@ -183,7 +181,25 @@ namespace cowsins2D
         }
 
         public void StartIntroduceDialog()
-        {            
+        {
+            // 튜토리얼을 아직 안 본 판(0)에서는 튜토리얼을 먼저 보여 주고, 끝난 1초 뒤에 intro 로 넘어간다.
+            // 대화창은 한 번에 하나만 뜨므로 "1초 후"는 튜토리얼이 끝난 시점 기준이다.
+            if (PauseMenu.TutorialState == 0)
+            {
+                RegisterFunction.SingleCall(1.0f, () =>
+                {
+                    ShowDialog(listDialogtutorial);
+                    PauseMenu.TutorialState = 2;
+
+                    actionDialogEnd = () =>
+                        RegisterFunction.SingleCall(1.0f, () =>
+                        {
+                            ShowDialog(listDialogintro);
+                            actionDialogEnd = () => { };
+                        });
+                });
+                return;
+            }
 
             RegisterFunction.SingleCall(1.0f, () =>
             {
@@ -521,7 +537,11 @@ namespace cowsins2D
         
 
             videoPlayer.Stop();                                 
-            videoPlayer.PlayUrl("https://cdn.jsdelivr.net/gh/syjang120-maker/BabyJoeEndingCredit@main/ending%20credit.mp4");
+            //videoPlayer.PlayUrl("https://cdn.jsdelivr.net/gh/syjang120-maker/BabyJoeEndingCredit@main/ending%20credit.mp4");
+            videoPlayer.PlayUrl("https://cdn.jsdelivr.net/gh/claire-sj-jeon/baby-joe/8-21w.mp4");
+
+        
+
             yield return new WaitForSeconds(6.0f);
 
             // 3초 후 또는 아무 입력 시 다음으로
@@ -536,6 +556,8 @@ namespace cowsins2D
 
         IEnumerator coResourcesCutScene()
         {
+            Debug.Log("== Resoucesc CutScene==");
+
             yield return new WaitForSeconds(1.0f);
             videoPlayer.Activity = true;
 

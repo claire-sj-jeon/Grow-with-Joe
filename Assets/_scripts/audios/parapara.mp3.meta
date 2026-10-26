@@ -19,9 +19,9 @@ AudioImporter:
       sampleRateSetting: 2
       sampleRateOverride: 44100
       compressionFormat: 7
-      quality: 0.53
+      quality: 0.16
       conversionMode: 0
-      preloadAudioData: 0
+      preloadAudioData: 1
   forceToMono: 1
   normalize: 1
   loadInBackground: 0

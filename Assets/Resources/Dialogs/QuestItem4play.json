@@ -1,7 +1,7 @@
 [
   {
     "type": "PortraitAndText",
-    "textCaption": "That wasn’t too bad of a good night’s sleep! I feel better...but...",
+    "textCaption": "That was a great day! Now I'm full, I'm rested…",
     "textName": "<color=orange>Baby Joe</color>",
     "spritePortrait": "Portrait/babyjoe",
     "spriteDescript": "",
@@ -9,7 +9,7 @@
   },
   {
     "type": "PortraitAndText",
-    "textCaption": "I’m boredddd! Hmmm... maybe I should find other dinosaurs to play with.",
+    "textCaption": "But I’m boreddd! Hmmm… maybe I should find other dinosaurs to play with.",
     "textName": "<color=orange>Baby Joe</color>",
     "spritePortrait": "Portrait/babyjoe_boring3",
     "spriteDescript": "",
