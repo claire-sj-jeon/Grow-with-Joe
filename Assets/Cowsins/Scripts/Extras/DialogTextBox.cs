@@ -1,4 +1,4 @@
-
+ï»¿
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -103,13 +103,13 @@ namespace cowsins2D
 
         //    for (int i = 0; i < message.Length; i++)
         //    {
-        //        // command ÆÄ½Ì
+        //        // command íŒŒì‹±
         //        if (message[i] == '@')
         //        {
         //            int commandStart = i;
         //            int commandEnd = i + 1;
 
-        //            // °ø¹é, ÁÙ¹Ù²Ş Àü±îÁö¸¦ command·Î °£ÁÖ
+        //            // ê³µë°±, ì¤„ë°”ê¿ˆ ì „ê¹Œì§€ë¥¼ commandë¡œ ê°„ì£¼
         //            while (commandEnd < message.Length &&
         //                   !char.IsWhiteSpace(message[commandEnd]))
         //            {
@@ -118,17 +118,17 @@ namespace cowsins2D
 
         //            string command = message.Substring(commandStart, commandEnd - commandStart);
 
-        //            // command Ã³¸®
+        //            // command ì²˜ë¦¬
         //            //yield return HandleCommand(command, targetBox);
 
         //            menu.ExtraCommand(command, this);                    
 
-        //            // command ºÎºĞÀº Ãâ·ÂÇÏÁö ¾Ê°í °Ç³Ê¶Ü
+        //            // command ë¶€ë¶„ì€ ì¶œë ¥í•˜ì§€ ì•Šê³  ê±´ë„ˆëœ€
         //            i = commandEnd - 1;
         //            continue;
         //        }
 
-        //        // ÀÏ¹İ ÅØ½ºÆ® Ãâ·Â
+        //        // ì¼ë°˜ í…ìŠ¤íŠ¸ ì¶œë ¥
         //        targetBox.Text.text += message[i];
         //        visibleCharCount++;
 
@@ -148,7 +148,7 @@ namespace cowsins2D
 
             for (int i = 0; i < message.Length; i++)
             {
-                // 1. command ÆÄ½Ì (@look °°Àº °Í)
+                // 1. command íŒŒì‹± (@look ê°™ì€ ê²ƒ)
                 if (message[i] == '@')
                 {
                     int commandStart = i;
@@ -168,7 +168,7 @@ namespace cowsins2D
                     continue;
                 }
 
-                // 2. RichText tag ÆÄ½Ì (<color=orange>, </color>, <i> µî)
+                // 2. RichText tag íŒŒì‹± (<color=orange>, </color>, <i> ë“±)
                 if (message[i] == '<')
                 {
                     int tagStart = i;
@@ -179,7 +179,7 @@ namespace cowsins2D
                         tagEnd++;
                     }
 
-                    // '>'±îÁö Æ÷ÇÔÇØ¼­ tag ÀüÃ¼¸¦ ÇÑ ¹ø¿¡ Ãß°¡
+                    // '>'ê¹Œì§€ í¬í•¨í•´ì„œ tag ì „ì²´ë¥¼ í•œ ë²ˆì— ì¶”ê°€
                     if (tagEnd < message.Length && message[tagEnd] == '>')
                     {
                         string tag = message.Substring(tagStart, tagEnd - tagStart + 1);
@@ -190,7 +190,7 @@ namespace cowsins2D
                     }
                 }
 
-                // 3. ÀÏ¹İ ÅØ½ºÆ® Ãâ·Â
+                // 3. ì¼ë°˜ í…ìŠ¤íŠ¸ ì¶œë ¥
                 targetBox.Text.text += message[i];
                 visibleCharCount++;
 
@@ -207,18 +207,18 @@ namespace cowsins2D
             switch (command.ToLower())
             {
                 case "@look":
-                    Debug.Log("LOOK ½ÃÀÛ");
-                    // ¿©±â¼­ ¿øÇÏ´Â Ã³¸®
-                    // ¿¹: Ä³¸¯ÅÍ ¹Ù¶óº¸±â, ¾Ö´Ï¸ŞÀÌ¼Ç Àç»ı µî
+                    Debug.Log("LOOK ì‹œì‘");
+                    // ì—¬ê¸°ì„œ ì›í•˜ëŠ” ì²˜ë¦¬
+                    // ì˜ˆ: ìºë¦­í„° ë°”ë¼ë³´ê¸°, ì• ë‹ˆë©”ì´ì…˜ ì¬ìƒ ë“±
                     break;
 
                 case "@lookend":
-                    Debug.Log("LOOK Á¾·á");
-                    // ¿©±â¼­ ¿øÇÏ´Â Ã³¸®
+                    Debug.Log("LOOK ì¢…ë£Œ");
+                    // ì—¬ê¸°ì„œ ì›í•˜ëŠ” ì²˜ë¦¬
                     break;
 
                 default:
-                    Debug.LogWarning($"¾Ë ¼ö ¾ø´Â command: {command}");
+                    Debug.LogWarning($"ì•Œ ìˆ˜ ì—†ëŠ” command: {command}");
                     break;
             }
 
@@ -259,7 +259,7 @@ namespace cowsins2D
             portrain_parent.Activity = false;
             normal_parent.Activity = false;
 
-            // ÃÊ»óÈ­¿Í ÅØ½ºÆ® ========
+            // ì´ˆìƒí™”ì™€ í…ìŠ¤íŠ¸ ========
             if (form.type == DialogType.PortraitAndText)
             {
                 portrain_parent.Activity = true;
@@ -279,7 +279,7 @@ namespace cowsins2D
 
             
 
-            // ÀÌ¸§ ºÎºĞ. =========================
+            // ì´ë¦„ ë¶€ë¶„. =========================
             if ( string.IsNullOrEmpty( form.textName ) == false )
             {
                 textNameBox_parent.Activity = true;
@@ -289,7 +289,7 @@ namespace cowsins2D
                 textNameBox_parent.Activity = false;
 
 
-            //  ¿É¼Ç ¼±ÅÃÁö Å¬¸®¾î =========================
+            //  ì˜µì…˜ ì„ íƒì§€ í´ë¦¬ì–´ =========================
             for (int i = 0; i < lists.Count; ++i)
                 lists[i].Activity = false;
 
@@ -374,7 +374,7 @@ namespace cowsins2D
                 btnEnd.Activity = false;
             }
 
-            // ³Ğ°Ô ÀÌ¹ÌÁö°¡ ³ª¿Í¼­ ¼³¸íÀ» µµ¿ÍÁÖ´Â ºÎºĞ.
+            // ë„“ê²Œ ì´ë¯¸ì§€ê°€ ë‚˜ì™€ì„œ ì„¤ëª…ì„ ë„ì™€ì£¼ëŠ” ë¶€ë¶„.
             wideimage_parent.Activity = false;
             if (form.type == DialogType.WideImageAndText)
             {

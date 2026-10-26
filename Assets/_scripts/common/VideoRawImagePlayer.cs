@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
 
@@ -103,7 +103,7 @@ public class VideoRawImagePlayer : MonoBehaviour
     {
         if (clip == null)
         {
-            Debug.LogWarning("Play ½ÇÆĞ: VideoClipÀÌ null ÀÔ´Ï´Ù.");
+            Debug.LogWarning("Play ì‹¤íŒ¨: VideoClipì´ null ì…ë‹ˆë‹¤.");
             return;
         }
         isFinished = false;
@@ -121,7 +121,7 @@ public class VideoRawImagePlayer : MonoBehaviour
     {
         if (videoClip == null)
         {
-            Debug.LogWarning("Àç»ıÇÒ VideoClipÀÌ ¾ø½À´Ï´Ù.");
+            Debug.LogWarning("ì¬ìƒí•  VideoClipì´ ì—†ìŠµë‹ˆë‹¤.");
             return;
         }
 
@@ -137,14 +137,14 @@ public class VideoRawImagePlayer : MonoBehaviour
     private void OnVideoFinished(VideoPlayer vp)
     {
         isFinished = true;
-        Debug.Log("ºñµğ¿À Àç»ı ¿Ï·á");
+        Debug.Log("ë¹„ë””ì˜¤ ì¬ìƒ ì™„ë£Œ");
     }
 
     public void PlayUrl(string url)
     {
         if (string.IsNullOrWhiteSpace(url))
         {
-            Debug.LogWarning("PlayUrl ½ÇÆĞ: url ÀÌ ºñ¾îÀÖ½À´Ï´Ù.");
+            Debug.LogWarning("PlayUrl ì‹¤íŒ¨: url ì´ ë¹„ì–´ìˆìŠµë‹ˆë‹¤.");
             return;
         }
         isFinished = false;
@@ -243,7 +243,7 @@ public class VideoRawImagePlayer : MonoBehaviour
 
     private void OnErrorReceived(VideoPlayer vp, string message)
     {
-        Debug.LogError($"ºñµğ¿À Àç»ı ¿¡·¯: {message}");
+        Debug.LogError($"ë¹„ë””ì˜¤ ì¬ìƒ ì—ëŸ¬: {message}");
     }
 
     private void ReleaseRenderTexture()

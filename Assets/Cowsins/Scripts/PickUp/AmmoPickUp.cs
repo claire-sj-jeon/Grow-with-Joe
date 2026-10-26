@@ -23,7 +23,7 @@ namespace cowsins2D
         }
         public override void Interact(PlayerDependencies source)
         {
-            // Perform Basic or Full operations depending on the Player�s current inventory system selected.
+            // Perform Basic or Full operations depending on the Player's current inventory system selected.
 
             // Get a reference to the player WeaponController.
             IWeaponController wc = source.WeaponController;

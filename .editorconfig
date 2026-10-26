@@ -1,0 +1,22 @@
+root = true
+
+# 한국어 Windows의 Visual Studio는 BOM 없는 파일을 시스템 코드페이지(CP949)로 열기 때문에
+# 한글 주석이 포함된 소스를 재저장하면 복구 불가능하게 깨진다. BOM을 강제해 이를 방지한다.
+[*.cs]
+charset = utf-8-bom
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = false
+insert_final_newline = true
+
+[*.{json,md,yml,yaml}]
+charset = utf-8
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+
+# Unity가 생성·관리하는 파일은 형식을 건드리지 않는다
+[*.{meta,asset,unity,prefab,inputactions}]
+charset = utf-8
+trim_trailing_whitespace = false
+insert_final_newline = false

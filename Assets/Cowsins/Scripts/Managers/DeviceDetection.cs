@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.InputSystem;
 namespace cowsins2D {
 public class DeviceDetection : MonoBehaviour
@@ -24,9 +24,9 @@ public class DeviceDetection : MonoBehaviour
 
     private void Start()
     {
-            // ½ÇÇàÇÏ´Â platform ÀÌ ¸ğ¹ÙÀÏ (webbuild ¿¡¼­µµ ¸ğ¹ÙÀÏÇÃ·§Æû ºê¶ó¿ìÀú»óÅÂ¶ó¸é
-            // touchInputUI À» setactive true ÇÏ°í 
-            // ¾Æ´Ï¸é setactive ¸¦ false ÇÑ´Ù.
+            // ì‹¤í–‰í•˜ëŠ” platform ì´ ëª¨ë°”ì¼ (webbuild ì—ì„œë„ ëª¨ë°”ì¼í”Œë«í¼ ë¸Œë¼ìš°ì €ìƒíƒœë¼ë©´
+            // touchInputUI ì„ setactive true í•˜ê³  
+            // ì•„ë‹ˆë©´ setactive ë¥¼ false í•œë‹¤.
 
             bool isMobileDevice = IsMobileDevice();
 
@@ -41,18 +41,18 @@ public class DeviceDetection : MonoBehaviour
 
     private bool IsMobileDevice()
     {
-        // 1. Android / iOS ¾Û ºôµå
+        // 1. Android / iOS ì•± ë¹Œë“œ
         if (Application.isMobilePlatform)
             return true;
 
-        // 2. WebBuild¿¡¼­ ¸ğ¹ÙÀÏ ºê¶ó¿ìÀú ÆÇº°
+        // 2. WebBuildì—ì„œ ëª¨ë°”ì¼ ë¸Œë¼ìš°ì € íŒë³„
         if (Application.platform == RuntimePlatform.WebGLPlayer)
         {
-            // ÅÍÄ¡½ºÅ©¸°ÀÌ ÀÖÀ¸¸é ¸ğ¹ÙÀÏ ºê¶ó¿ìÀúÀÏ °¡´É¼ºÀÌ ³ôÀ½
+            // í„°ì¹˜ìŠ¤í¬ë¦°ì´ ìˆìœ¼ë©´ ëª¨ë°”ì¼ ë¸Œë¼ìš°ì €ì¼ ê°€ëŠ¥ì„±ì´ ë†’ìŒ
             if (Touchscreen.current != null)
                 return true;
 
-            // ¸ğ¹ÙÀÏ ºê¶ó¿ìÀú¿¡¼­ ¸¶¿ì½º ¾øÀÌ ÅÍÄ¡¸¸ ÀÖ´Â °æ¿ì ´ëÀÀ            
+            // ëª¨ë°”ì¼ ë¸Œë¼ìš°ì €ì—ì„œ ë§ˆìš°ìŠ¤ ì—†ì´ í„°ì¹˜ë§Œ ìˆëŠ” ê²½ìš° ëŒ€ì‘            
             foreach (var device in InputSystem.devices)
             {
                 if (device is Touchscreen)

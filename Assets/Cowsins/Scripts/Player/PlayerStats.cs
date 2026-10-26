@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
@@ -29,7 +29,7 @@ namespace cowsins2D
         [SerializeField, Tooltip("Time to revive when dead ( if there is any enabled checkpoint )")] 
         private float timeToRevive;
 
-        [Tooltip("Set the health regeneration method. None: Won�t regenerate." +
+        [Tooltip("Set the health regeneration method. None: Won't regenerate." +
             " AlwaysRegenerates: Regenerate if the health is below the maximum value. "), SerializeField]
         private HealthRegenerationMethod healthRegenerationMethod;
 

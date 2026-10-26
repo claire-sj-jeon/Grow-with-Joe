@@ -8,7 +8,7 @@ namespace cowsins2D
     {
         [SerializeField, Tooltip("Reference to the player Camera.")] private Camera grappleCamera;
         [SerializeField, Tooltip("Reference to the player Line Renderer component.")] private LineRenderer grappleLineRenderer;
-        [SerializeField, Tooltip("Sets the allowed grapple layers. You won�t be able to use the grapple on surfaces that are not included in this mask.")] private LayerMask grappleMask;
+        [SerializeField, Tooltip("Sets the allowed grapple layers. You won't be able to use the grapple on surfaces that are not included in this mask.")] private LayerMask grappleMask;
         [SerializeField, Tooltip("Velocity from the initial grapple position to the grapple target.")] private float moveSpeed = 2f;
         [SerializeField, Tooltip("Maximum distance allowed to grapple.")] private float grappleLength = 5f;
         [Min(1)]

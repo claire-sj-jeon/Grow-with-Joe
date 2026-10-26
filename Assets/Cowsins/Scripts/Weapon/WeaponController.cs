@@ -28,7 +28,7 @@ namespace cowsins2D
 
         [Tooltip("Used for weapons with custom shot method. Here, " +
             "you can attach your scriptable objects and assign the method you want to call on shoot. " +
-            "Please only assign those scriptable objects that use custom shot methods, Otherwise it won�t work or you will run into issues."), SerializeField]
+            "Please only assign those scriptable objects that use custom shot methods, Otherwise it won't work or you will run into issues."), SerializeField]
         private CustomShotMethods[] customShot;
 
         [Tooltip("Allow shooting while in a ladder."), SerializeField] private bool canShootWhileLadder;

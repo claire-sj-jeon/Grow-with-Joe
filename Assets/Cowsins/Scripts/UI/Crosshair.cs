@@ -8,7 +8,7 @@ namespace cowsins2D
 
         [SerializeField, Tooltip("If the player does not own a weapon, set to true if you want the crosshair to still be visible.")] private bool showCrosshairIfWeaponIsNull;
 
-        [SerializeField, Tooltip("Spread that the crosshair will lerp to (“idle spread”)")] private float defaultSpread, resizeSpeed;
+        [SerializeField, Tooltip("Spread that the crosshair will lerp to ('idle spread')")] private float defaultSpread, resizeSpeed;
 
         [SerializeField, Tooltip("Width of each line of the crosshair")] private float defaultWidth;
 
