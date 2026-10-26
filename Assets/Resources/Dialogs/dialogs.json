@@ -1,5 +1,934 @@
-{
-    "intro": [],
-    "tutorial": [],
-    "end": []
+﻿{
+  "intro": [
+    {
+      "type": "PortraitAndText",
+      "textCaption": "Hi there, explorers!\nI’m <b>Dr. Andrew Farke,</b>\na dinosaur-studying paleontologist. \nNice to meet you!",
+      "textName": "Dr. Farke",
+      "spritePortrait": "Portrait/dr",
+      "spriteDescript": "",
+      "choices": []
+    },
+    {
+      "type": "TextOnly",
+      "textCaption": "You see that cute little dinosaur over there?  @look \nThat’s<color=orange> “Baby Joe.” </color>",
+      "textName": "",
+      "spritePortrait": "",
+      "spriteDescript": "",
+      "choices": []
+    },
+    {
+      "type": "TextOnly",
+      "textCaption": "<color=orange>Baby Joe</color> is a <i>Parasaurolophus</i> that lived during the Cretaceous period, in a place we call Utah today. @lookend \n\n\n",
+      "textName": "",
+      "spritePortrait": "",
+      "spriteDescript": "",
+      "choices": []
+    },
+    {
+      "type": "PortraitAndText",
+      "textCaption": "Today, we’re going on an amazing adventure to learn about <color=orange>ontogeny.</color>",
+      "textName": "Dr. Farke",
+      "spritePortrait": "Portrait/dr",
+      "spriteDescript": "",
+      "choices": []
+    },
+    {
+      "type": "PortraitAndText",
+      "textCaption": "... That might sound intimidating, but that just means we’re going to learn how animals grow up.",
+      "textName": "Dr. Farke",
+      "spritePortrait": "Portrait/dr",
+      "spriteDescript": "",
+      "choices": []
+    }
+  ],
+  "tutorial": [
+    {
+      "type": "WideImageAndText",
+      "textCaption": "In-game, you’re going to have a joystick on the left and a jump button on the right.\n",
+      "textName": "",
+      "spritePortrait": "",
+      "spriteDescript": "tutorials/tut",
+      "choices": []
+    },
+    {
+      "type": "WideImageAndText",
+      "textCaption": "You can drag the joystick to move around and press the jump button to, well, jump!",
+      "textName": "",
+      "spritePortrait": "",
+      "spriteDescript": "tutorials/tut",
+      "choices": []
+    },
+    {
+      "type": "PortraitAndText",
+      "textCaption": "Along the way, <color=orange>Baby Joe</color> might run into some other dinosaurs.",
+      "textName": "Dr. Farke",
+      "spritePortrait": "Portrait/dr",
+      "spriteDescript": "",
+      "choices": []
+    },
+    {
+      "type": "PortraitAndText",
+      "textCaption": "They might even talk to <color=orange>Baby Joe. </color>",
+      "textName": "Dr. Farke",
+      "spritePortrait": "Portrait/dr",
+      "spriteDescript": "",
+      "choices": []
+    },
+    {
+      "type": "WideImageAndText",
+      "textCaption": " You can click on the arrow button in the bottom-right corner to move on, like you’re doing right now!",
+      "textName": "",
+      "spritePortrait": "",
+      "spriteDescript": "tutorials/tut 2",
+      "choices": []
+    },
+    {
+      "type": "PortraitAndText",
+      "textCaption": "Along the way, <color=orange>Baby Joe</color> might have some problems to solve.",
+      "textName": "Dr. Farke",
+      "spritePortrait": "Portrait/dr",
+      "spriteDescript": "",
+      "choices": []
+    },
+    {
+      "type": "WideImageAndText",
+      "textCaption": "This is where you come in: help <color=orange>Baby Joe</color> make decisions as it grows! <color=orange>Baby Joe</color> needs YOUR help to live through his life as a baby <i>parasaurolophus.</i>",
+      "textName": "",
+      "spritePortrait": "",
+      "spriteDescript": "tutorials/tut 2",
+      "choices": []
+    },
+    {
+      "type": "WideImageAndText",
+      "textCaption": "Go ahead and click one of the three choices. Some might be partially correct, but remember—only ONE is the best path to survival. Look closely and choose the most scientifically accurate one!",
+      "textName": "",
+      "spritePortrait": "",
+      "spriteDescript": "tutorials/tut 2",
+      "choices": []
+    },
+    {
+      "type": "PortraitAndText",
+      "textCaption": "Now, I hope you're ready. \nLet’s start this incredible journey!",
+      "textName": "Dr. Farke",
+      "spritePortrait": "Portrait/dr",
+      "spriteDescript": "",
+      "choices": []
+    },
+    {
+      "type": "PortraitAndText",
+      "textCaption": "See you 75 million years ago!",
+      "textName": "Dr. Farke",
+      "spritePortrait": "Portrait/dr",
+      "spriteDescript": "",
+      "choices": []
+    }
+  ],
+  "end": [
+    {
+      "type": "TextOnly",
+      "textCaption": "The season changes. Food becomes scarce. ",
+      "textName": "",
+      "spritePortrait": "",
+      "spriteDescript": "",
+      "choices": []
+    },
+    {
+      "type": "PortraitAndText",
+      "textCaption": "I need to find food... where should I go?",
+      "textName": "baby joe",
+      "spritePortrait": "Portrait/babyjoe",
+      "spriteDescript": "",
+      "choices": [
+        {
+          "text": "1",
+          "afterText": "...",
+          "aftersprite": "",
+          "sprite": "",
+          "answerType": "Correct",
+          "afterDialogs": []
+        },
+        {
+          "text": "2",
+          "afterText": "...",
+          "aftersprite": "",
+          "sprite": "",
+          "answerType": "Wrong",
+          "afterDialogs": []
+        },
+        {
+          "text": "3",
+          "afterText": "...",
+          "aftersprite": "",
+          "sprite": "",
+          "answerType": "NotWrong",
+          "afterDialogs": []
+        }
+      ]
+    },
+    {
+      "type": "LastQuestionWith3Choices",
+      "textCaption": "Question",
+      "textName": "",
+      "spritePortrait": "",
+      "spriteDescript": "",
+      "choices": [
+        {
+          "text": "Follow herd to wetter floodplain",
+          "afterText": "",
+          "aftersprite": "",
+          "sprite": "quests/new Q2-Q5 image/q5a1",
+          "answerType": "Correct",
+          "afterDialogs": [
+            {
+              "type": "TextOnly",
+              "textCaption": "Following the herd leads to abundant food and safer conditions.",
+              "textName": "",
+              "spritePortrait": "",
+              "spriteDescript": "",
+              "choices": []
+            },
+            {
+              "type": "PortraitAndText",
+              "textCaption": "There’s so much to eat! I love my herd!",
+              "textName": "",
+              "spritePortrait": "Portrait/babyjoe",
+              "spriteDescript": "",
+              "choices": []
+            }
+          ]
+        },
+        {
+          "text": "Wander into upland dry forest",
+          "afterText": "",
+          "aftersprite": "",
+          "sprite": "quests/new Q2-Q5 image/q5a2",
+          "answerType": "Wrong",
+          "afterDialogs": [
+            {
+              "type": "TextOnly",
+              "textCaption": "The dry forest lacks enough vegetation to sustain you.",
+              "textName": "",
+              "spritePortrait": "",
+              "spriteDescript": "",
+              "choices": []
+            },
+            {
+              "type": "PortraitAndText",
+              "textCaption": "Thirsty...food...",
+              "textName": "baby joe",
+              "spritePortrait": "Portrait/babyjoe",
+              "spriteDescript": "",
+              "choices": []
+            },
+            {
+              "type": "PortraitAndText",
+              "textCaption": "Nothing......here...",
+              "textName": "baby joe",
+              "spritePortrait": "Portrait/babyjoe",
+              "spriteDescript": "",
+              "choices": []
+            }
+          ]
+        },
+        {
+          "text": "Split off with juveniles",
+          "afterText": "",
+          "aftersprite": "",
+          "sprite": "quests/new Q2-Q5 image/q5a3",
+          "answerType": "NotWrong",
+          "afterDialogs": [
+            {
+              "type": "TextOnly",
+              "textCaption": "You have some safety in numbers, but lack adult protection.",
+              "textName": "",
+              "spritePortrait": "",
+              "spriteDescript": "",
+              "choices": []
+            },
+            {
+              "type": "PortraitAndText",
+              "textCaption": "Uhhh, I love you guys, but I don’t feel so safe...!",
+              "textName": "baby joe",
+              "spritePortrait": "Portrait/babyjoe",
+              "spriteDescript": "",
+              "choices": []
+            },
+            {
+              "type": "PortraitAndText",
+              "textCaption": "Stay close!",
+              "textName": "baby joe",
+              "spritePortrait": "Portrait/babyjoe",
+              "spriteDescript": "",
+              "choices": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "quests": {
+    "QuestItem2canivore": [
+      {
+        "type": "TextOnly",
+        "textCaption": "Oh no! It’s a <i>Teratophoneus</i>, your predator! \nAnd it looks hungry...",
+        "textName": "",
+        "spritePortrait": "",
+        "spriteDescript": "",
+        "choices": []
+      },
+      {
+        "type": "PortraitAndText",
+        "textCaption": "Uh-oh! What should I do!",
+        "textName": "<color=orange>Baby Joe</color>",
+        "spritePortrait": "Portrait/babyjoe",
+        "spriteDescript": "",
+        "choices": []
+      },
+      {
+        "type": "PortraitAndText",
+        "textCaption": "I need to decide quickly...",
+        "textName": "<color=orange>Baby Joe</color>",
+        "spritePortrait": "Portrait/babyjoe",
+        "spriteDescript": "",
+        "choices": []
+      },
+      {
+        "type": "QuestionWith3Choices",
+        "textCaption": "A <i>Teratophoneus</i> has appeared! \nWhat is <color=orange>Baby Joe's</color> best chance for survival?\n",
+        "textName": "",
+        "spritePortrait": "",
+        "spriteDescript": "",
+        "choices": [
+          {
+            "text": "Hide motionless in vegetation",
+            "afterText": "",
+            "aftersprite": "",
+            "sprite": "quests/new Q2-Q5 image/q2a1",
+            "answerType": "Wrong",
+            "afterDialogs": [
+              {
+                "type": "TextOnly",
+                "textCaption": "Uh-oh! The <i>Tetraphoneus</i> actually had a great sense of smell—perfect for finding out where its prey is.",
+                "textName": "",
+                "spritePortrait": "",
+                "spriteDescript": "",
+                "choices": []
+              },
+              {
+                "type": "TextOnly",
+                "textCaption": "To make it even worse, it was an ambush predator—a type of dinosaur that hides and jumps out at its prey to hunt it down.",
+                "textName": "",
+                "spritePortrait": "",
+                "spriteDescript": "",
+                "choices": []
+              },
+              {
+                "type": "PortraitAndText",
+                "textCaption": "It sees me!",
+                "textName": "<color=orange>Baby Joe</color>",
+                "spritePortrait": "Portrait/babyjoe_scray",
+                "spriteDescript": "",
+                "choices": []
+              }
+            ]
+          },
+          {
+            "text": "Run in a straight line across open ground",
+            "afterText": "",
+            "aftersprite": "",
+            "sprite": "quests/new Q2-Q5 image/q2a2",
+            "answerType": "NotWrong",
+            "afterDialogs": [
+              {
+                "type": "TextOnly",
+                "textCaption": "Almost! You run as fast as you can! \nYou’ve seen some other adult <i>Parasaurolophus</i> before. ",
+                "textName": "",
+                "spritePortrait": "",
+                "spriteDescript": "",
+                "choices": []
+              },
+              {
+                "type": "TextOnly",
+                "textCaption": "They can outrun the <i>Tetrophoneus</i>, so you can do it too! ...Right...?",
+                "textName": "",
+                "spritePortrait": "",
+                "spriteDescript": "",
+                "choices": []
+              },
+              {
+                "type": "TextOnly",
+                "textCaption": "Oh no! You’re a juvenile <i>Parasaurolophus</i>, and not as fast as an adult. Running alone is risky.",
+                "textName": "",
+                "spritePortrait": "",
+                "spriteDescript": "",
+                "choices": []
+              },
+              {
+                "type": "PortraitAndText",
+                "textCaption": "Nghhh... Keep... running...!",
+                "textName": "<color=orange>Baby Joe</color>",
+                "spritePortrait": "Portrait/babyjoe_scream",
+                "spriteDescript": "",
+                "choices": []
+              }
+            ]
+          },
+          {
+            "text": "Call loudly for the herd",
+            "afterText": "",
+            "aftersprite": "",
+            "sprite": "quests/new Q2-Q5 image/q2a3",
+            "answerType": "Correct",
+            "afterDialogs": [
+              {
+                "type": "PortraitAndText",
+                "textCaption": "Correct! Your call alerts nearby adults, who move to protect you.",
+                "textName": "Dr. Farke",
+                "spritePortrait": "Portrait/dr",
+                "spriteDescript": "",
+                "choices": []
+              },
+              {
+                "type": "PortraitAndText",
+                "textCaption": "Whew! They heard me!",
+                "textName": "<color=orange>Baby Joe</color>",
+                "spritePortrait": "Portrait/babyjoe_play",
+                "spriteDescript": "",
+                "choices": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "QuestItem4play": [
+      {
+        "type": "PortraitAndText",
+        "textCaption": "That wasn’t too bad of a good night’s sleep! I feel better...but...",
+        "textName": "<color=orange>Baby Joe</color>",
+        "spritePortrait": "Portrait/babyjoe",
+        "spriteDescript": "",
+        "choices": []
+      },
+      {
+        "type": "PortraitAndText",
+        "textCaption": "I’m boredddd! Hmmm... maybe I should find other dinosaurs to play with.",
+        "textName": "<color=orange>Baby Joe</color>",
+        "spritePortrait": "Portrait/babyjoe_boring3",
+        "spriteDescript": "",
+        "choices": []
+      },
+      {
+        "type": "PortraitAndText",
+        "textCaption": "But who?",
+        "textName": "<color=orange>Baby Joe</color>",
+        "spritePortrait": "Portrait/babyjoe",
+        "spriteDescript": "",
+        "choices": []
+      },
+      {
+        "type": "QuestionWith3Choices",
+        "textCaption": "<color=orange>Baby Joe</color> is ready for some fun! \nWho do you think would be the best playmate for him?",
+        "textName": "",
+        "spritePortrait": "",
+        "spriteDescript": "",
+        "choices": [
+          {
+            "text": "A juvenile herd your age",
+            "afterText": "",
+            "aftersprite": "",
+            "sprite": "quests/new Q2-Q5 image/q4a1",
+            "answerType": "Correct",
+            "afterDialogs": [
+              {
+                "type": "PortraitAndText",
+                "textCaption": "Correct! Young <i>Parasaurolophus</i> often gather with others their age to learn and grow.",
+                "textName": "Dr. Farke",
+                "spritePortrait": "Portrait/dr",
+                "spriteDescript": "",
+                "choices": []
+              },
+              {
+                "type": "PortraitAndText",
+                "textCaption": "Let’s play!",
+                "textName": "<color=orange>Baby Joe</color>",
+                "spritePortrait": "Portrait/babyjoe_play",
+                "spriteDescript": "",
+                "choices": []
+              },
+              {
+                "type": "PortraitAndText",
+                "textCaption": "Yipee! This is fun!",
+                "textName": "<color=orange>Baby Joe</color>",
+                "spritePortrait": "Portrait/babyjoe_play",
+                "spriteDescript": "",
+                "choices": []
+              }
+            ]
+          },
+          {
+            "text": "A solitary adult giving threat displays",
+            "afterText": "",
+            "aftersprite": "",
+            "sprite": "quests/new Q2-Q5 image/q4a2",
+            "answerType": "Wrong",
+            "afterDialogs": [
+              {
+                "type": "TextOnly",
+                "textCaption": "Uh-oh! The adult sees you as a disturbance and reacts aggressively.",
+                "textName": "",
+                "spritePortrait": "",
+                "spriteDescript": "",
+                "choices": []
+              },
+              {
+                "type": "PortraitAndText",
+                "textCaption": "Whoa! Eek! I’m sorry, I’ll go somewhere else!",
+                "textName": "<color=orange>Baby Joe</color>",
+                "spritePortrait": "Portrait/babyjoe_surprize",
+                "spriteDescript": "",
+                "choices": []
+              }
+            ]
+          },
+          {
+            "text": "A group of <i>Gryposaurus</i> across the river",
+            "afterText": "",
+            "aftersprite": "",
+            "sprite": "quests/new Q2-Q5 image/q4a3",
+            "answerType": "NotWrong",
+            "afterDialogs": [
+              {
+                "type": "TextOnly",
+                "textCaption": "Almost! They are peaceful, but not your species—interaction remains distant.",
+                "textName": "",
+                "spritePortrait": "",
+                "spriteDescript": "",
+                "choices": []
+              },
+              {
+                "type": "PortraitAndText",
+                "textCaption": "They don’t seem interested...",
+                "textName": "<color=orange>Baby Joe</color>",
+                "spritePortrait": "Portrait/babyjoe",
+                "spriteDescript": "",
+                "choices": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "QuestItem3house ": [
+      {
+        "type": "TextOnly",
+        "textCaption": "Night begins to fall.",
+        "textName": "",
+        "spritePortrait": "",
+        "spriteDescript": "",
+        "choices": []
+      },
+      {
+        "type": "PortraitAndText",
+        "textCaption": "I’m tired... I need a safe place to sleep.",
+        "textName": "<color=orange>Baby Joe</color>",
+        "spritePortrait": "Portrait/babyjoe",
+        "spriteDescript": "",
+        "choices": []
+      },
+      {
+        "type": "QuestionWith3Choices",
+        "textCaption": "Night is falling and <color=orange>Baby Joe</color> is tired. \nWhere is the safest place to sleep?",
+        "textName": "",
+        "spritePortrait": "",
+        "spriteDescript": "",
+        "choices": [
+          {
+            "text": "Inside the herd cluster",
+            "afterText": "",
+            "aftersprite": "",
+            "sprite": "quests/new Q2-Q5 image/q3a1",
+            "answerType": "Correct",
+            "afterDialogs": [
+              {
+                "type": "PortraitAndText",
+                "textCaption": "Correct! Staying within the herd offers protection through numbers.",
+                "textName": "Dr. Farke",
+                "spritePortrait": "Portrait/dr",
+                "spriteDescript": "",
+                "choices": []
+              },
+              {
+                "type": "PortraitAndText",
+                "textCaption": "I feel safe...",
+                "textName": "<color=orange>Baby Joe</color>",
+                "spritePortrait": "Portrait/babyjoe_sleep",
+                "spriteDescript": "",
+                "choices": []
+              }
+            ]
+          },
+          {
+            "text": "Alone near tall grass at the edge",
+            "afterText": "",
+            "aftersprite": "",
+            "sprite": "quests/new Q2-Q5 image/q3a2",
+            "answerType": "Wrong",
+            "afterDialogs": [
+              {
+                "type": "TextOnly",
+                "textCaption": "Uh-oh! The edge of the herd leaves you exposed to predators…!",
+                "textName": "",
+                "spritePortrait": "",
+                "spriteDescript": "",
+                "choices": []
+              },
+              {
+                "type": "PortraitAndText",
+                "textCaption": "I feel like something’s watching me…!",
+                "textName": "<color=orange>Baby Joe</color>",
+                "spritePortrait": "Portrait/babyjoe",
+                "spriteDescript": "",
+                "choices": []
+              },
+              {
+                "type": "PortraitAndText",
+                "textCaption": "And…NOW!",
+                "textName": "<color=red><i>Teratophoneus</i></color>",
+                "spritePortrait": "Portrait/Teratophoneus",
+                "spriteDescript": "",
+                "choices": []
+              },
+              {
+                "type": "TextOnly",
+                "textCaption": "Oh no! The <i>Teratophoneus</i> found you sleeping! Meeting a predator while open to danger isn’t the best idea…!",
+                "textName": "",
+                "spritePortrait": "",
+                "spriteDescript": "",
+                "choices": []
+              },
+              {
+                "type": "PortraitAndText",
+                "textCaption": "GAH!!! Where did you come from!!!",
+                "textName": "<color=orange>Baby Joe</color>",
+                "spritePortrait": "Portrait/babyjoe_hurt",
+                "spriteDescript": "",
+                "choices": []
+              }
+            ]
+          },
+          {
+            "text": "In shallow water",
+            "afterText": "",
+            "aftersprite": "",
+            "sprite": "quests/new Q2-Q5 image/q3a3",
+            "answerType": "NotWrong",
+            "afterDialogs": [
+              {
+                "type": "TextOnly",
+                "textCaption": "Almost! The water keeps you cool, but footing is unstable and danger lurks.",
+                "textName": "",
+                "spritePortrait": "",
+                "spriteDescript": "",
+                "choices": []
+              },
+              {
+                "type": "PortraitAndText",
+                "textCaption": "I can’t get comfortable...",
+                "textName": "<color=orange>Baby Joe</color>",
+                "spritePortrait": "Portrait/babyjoe",
+                "spriteDescript": "",
+                "choices": []
+              },
+              {
+                "type": "PortraitAndText",
+                "textCaption": "Har har har… thanks for the free food!",
+                "textName": "<color=red><i>Deinosuchus</i></color>",
+                "spritePortrait": "Portrait/Deinosuchus",
+                "spriteDescript": "",
+                "choices": []
+              },
+              {
+                "type": "PortraitAndText",
+                "textCaption": "Oh no no no—!",
+                "textName": "<color=orange>Baby Joe</color>",
+                "spritePortrait": "Portrait/babyjoe_scray",
+                "spriteDescript": "",
+                "choices": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "QuestItem5Season": [
+      {
+        "type": "TextOnly",
+        "textCaption": "The season changes. Food becomes scarce. ",
+        "textName": "",
+        "spritePortrait": "",
+        "spriteDescript": "",
+        "choices": []
+      },
+      {
+        "type": "PortraitAndText",
+        "textCaption": "I need to find food... where should I go?",
+        "textName": "<color=orange>Baby Joe</color>",
+        "spritePortrait": "Portrait/babyjoe",
+        "spriteDescript": "",
+        "choices": [
+          {
+            "text": "1",
+            "afterText": "...",
+            "aftersprite": "",
+            "sprite": "",
+            "answerType": "Correct",
+            "afterDialogs": []
+          },
+          {
+            "text": "2",
+            "afterText": "...",
+            "aftersprite": "",
+            "sprite": "",
+            "answerType": "Wrong",
+            "afterDialogs": []
+          },
+          {
+            "text": "3",
+            "afterText": "...",
+            "aftersprite": "",
+            "sprite": "",
+            "answerType": "NotWrong",
+            "afterDialogs": []
+          }
+        ]
+      },
+      {
+        "type": "LastQuestionWith3Choices",
+        "textCaption": " As the seasons change, so does the habitat. \nTo find more food, where and how should <color=orange>Baby Joe</color> move to survive?",
+        "textName": "",
+        "spritePortrait": "",
+        "spriteDescript": "",
+        "choices": [
+          {
+            "text": "Follow herd to wetter floodplain",
+            "afterText": "",
+            "aftersprite": "",
+            "sprite": "quests/new Q2-Q5 image/q5a1",
+            "answerType": "Correct",
+            "afterDialogs": [
+              {
+                "type": "PortraitAndText",
+                "textCaption": "Correct! Following the herd leads to abundant food and safer conditions.",
+                "textName": "Dr. Farke",
+                "spritePortrait": "Portrait/dr",
+                "spriteDescript": "",
+                "choices": []
+              },
+              {
+                "type": "PortraitAndText",
+                "textCaption": "There’s so much to eat! I love my herd!",
+                "textName": "<color=orange>Baby Joe</color>",
+                "spritePortrait": "Portrait/babyjoe_joy",
+                "spriteDescript": "",
+                "choices": []
+              }
+            ]
+          },
+          {
+            "text": "Wander into upland dry forest",
+            "afterText": "",
+            "aftersprite": "",
+            "sprite": "quests/new Q2-Q5 image/q5a2",
+            "answerType": "Wrong",
+            "afterDialogs": [
+              {
+                "type": "TextOnly",
+                "textCaption": "Uh-oh! The dry forest lacks enough vegetation to sustain you.",
+                "textName": "",
+                "spritePortrait": "",
+                "spriteDescript": "",
+                "choices": []
+              },
+              {
+                "type": "PortraitAndText",
+                "textCaption": "Thirsty...food...",
+                "textName": "<color=orange>Baby Joe</color>",
+                "spritePortrait": "Portrait/babyjoe_boring3",
+                "spriteDescript": "",
+                "choices": []
+              },
+              {
+                "type": "PortraitAndText",
+                "textCaption": "Nothing......here...",
+                "textName": "<color=orange>Baby Joe</color>",
+                "spritePortrait": "Portrait/babyjoe_boring2",
+                "spriteDescript": "",
+                "choices": []
+              }
+            ]
+          },
+          {
+            "text": "Split off with juveniles",
+            "afterText": "",
+            "aftersprite": "",
+            "sprite": "quests/new Q2-Q5 image/q5a3",
+            "answerType": "NotWrong",
+            "afterDialogs": [
+              {
+                "type": "TextOnly",
+                "textCaption": "Almost! You have some safety in numbers, but lack adult protection.",
+                "textName": "",
+                "spritePortrait": "",
+                "spriteDescript": "",
+                "choices": []
+              },
+              {
+                "type": "PortraitAndText",
+                "textCaption": "Uhhh, I love you guys, but I don’t feel so safe...!",
+                "textName": "<color=orange>Baby Joe</color>",
+                "spritePortrait": "Portrait/babyjoe",
+                "spriteDescript": "",
+                "choices": []
+              },
+              {
+                "type": "PortraitAndText",
+                "textCaption": "Stay close!",
+                "textName": "<color=orange>Baby Joe</color>",
+                "spritePortrait": "Portrait/babyjoe",
+                "spriteDescript": "",
+                "choices": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "QuestItem1food": [
+      {
+        "type": "TextOnly",
+        "textCaption": "Looks like <color=orange>Baby Joe</color> is hungry.",
+        "textName": "",
+        "spritePortrait": "",
+        "spriteDescript": "",
+        "choices": []
+      },
+      {
+        "type": "PortraitAndText",
+        "textCaption": "Ughhh...I need to eat something... but what?",
+        "textName": "<color=orange>Baby Joe</color>",
+        "spritePortrait": "Portrait/babyjoe",
+        "spriteDescript": "",
+        "choices": []
+      },
+      {
+        "type": "PortraitAndText",
+        "textCaption": "(maybe something easy to chew…?)",
+        "textName": "<color=orange>Baby Joe</color>",
+        "spritePortrait": "Portrait/babyjoe",
+        "spriteDescript": "",
+        "choices": []
+      },
+      {
+        "type": "QuestionWith3Choices",
+        "textCaption": "What would be the best meal for <color=orange>Baby Joe? </color>",
+        "textName": "",
+        "spritePortrait": "",
+        "spriteDescript": "",
+        "choices": [
+          {
+            "text": "Soft leaves, shoots, and young ferns",
+            "afterText": "",
+            "aftersprite": "",
+            "sprite": "quests/q1a1_soft",
+            "answerType": "Correct",
+            "afterDialogs": [
+              {
+                "type": "PortraitAndText",
+                "textCaption": "Correct! Soft plants are easy to chew and digest, perfect for a young <i>Parasaurolophus.</i>",
+                "textName": "Dr. Farke",
+                "spritePortrait": "Portrait/dr",
+                "spriteDescript": "",
+                "choices": []
+              },
+              {
+                "type": "PortraitAndText",
+                "textCaption": "Mmm... soft and juicy!",
+                "textName": "<color=orange>Baby Joe</color>",
+                "spritePortrait": "Portrait/babyjoe_chewing",
+                "spriteDescript": "",
+                "choices": []
+              }
+            ]
+          },
+          {
+            "text": "Bark, tough conifer needles",
+            "afterText": "",
+            "aftersprite": "",
+            "sprite": "quests/q1a2_bark",
+            "answerType": "Wrong",
+            "afterDialogs": [
+              {
+                "type": "TextOnly",
+                "textCaption": "Uh-oh! The needles are too tough and sharp for your young teeth.",
+                "textName": "",
+                "spritePortrait": "",
+                "spriteDescript": "",
+                "choices": []
+              },
+              {
+                "type": "PortraitAndText",
+                "textCaption": "Ow... that hurts...",
+                "textName": "<color=orange>Baby Joe</color>",
+                "spritePortrait": "Portrait/babyjoe_scream",
+                "spriteDescript": "",
+                "choices": []
+              }
+            ]
+          },
+          {
+            "text": "Aquatic plants deep underwater",
+            "afterText": "",
+            "aftersprite": "",
+            "sprite": "quests/q1a3_undersea",
+            "answerType": "NotWrong",
+            "afterDialogs": [
+              {
+                "type": "TextOnly",
+                "textCaption": "Almost! The plants look tasty, but deep water is risky for a young dinosaur.",
+                "textName": "",
+                "spritePortrait": "",
+                "spriteDescript": "",
+                "choices": []
+              },
+              {
+                "type": "PortraitAndText",
+                "textCaption": "I don’t feel safe here...",
+                "textName": "<color=orange>Baby Joe</color>",
+                "spritePortrait": "Portrait/babyjoe",
+                "spriteDescript": "",
+                "choices": []
+              },
+              {
+                "type": "PortraitAndText",
+                "textCaption": "Har har har... well if it isn’t a good day’s meal walking straight towards me!",
+                "textName": "<color=red><i>Deinosuchus</i></color>",
+                "spritePortrait": "Portrait/Deinosuchus",
+                "spriteDescript": "",
+                "choices": []
+              },
+              {
+                "type": "PortraitAndText",
+                "textCaption": "Wahhhh!",
+                "textName": "<color=orange>Baby Joe</color>",
+                "spritePortrait": "Portrait/babyjoe_scray",
+                "spriteDescript": "",
+                "choices": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

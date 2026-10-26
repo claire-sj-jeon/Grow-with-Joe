@@ -1,0 +1,119 @@
+[
+  {
+    "type": "WideImageAndText",
+    "textCaption": "In-game, you’re going to have a joystick on the left and a jump button on the right.\n",
+    "textName": "",
+    "spriteDescript": "tutorials/tut",
+    "choices": []
+  },
+  {
+    "type": "WideImageAndText",
+    "textCaption": "You can drag the joystick to move around and press the jump button to, well, jump!",
+    "textName": "",
+    "spriteDescript": "tutorials/tut",
+    "choices": []
+  },
+  {
+    "type": "PortraitAndText",
+    "textCaption": "Along the way, <color=orange>Baby Joe</color> might run into some other dinosaurs.",
+    "textName": "Dr. Farke",
+    "spritePortrait": "Portrait/dr",
+    "spriteDescript": "",
+    "choices": []
+  },
+  {
+    "type": "PortraitAndText",
+    "textCaption": "They might even talk to <color=orange>Baby Joe. </color>",
+    "textName": "Dr. Farke",
+    "spritePortrait": "Portrait/dr",
+    "spriteDescript": "",
+    "choices": []
+  },
+  {
+    "type": "WideImageAndText",
+    "textCaption": " You can click on the arrow button in the bottom-right corner to move on, like you’re doing right now!",
+    "textName": "",
+    "spriteDescript": "tutorials/tut 2",
+    "choices": []
+  },
+  {
+    "type": "PortraitAndText",
+    "textCaption": "Along the way, <color=orange>Baby Joe</color> might have some problems to solve.",
+    "textName": "Dr. Farke",
+    "spritePortrait": "Portrait/dr",
+    "spriteDescript": "",
+    "choices": []
+  },
+  {
+    "type": "WideImageAndText",
+    "textCaption": "This is where you come in: help <color=orange>Baby Joe</color> make decisions as it grows! <color=orange>Baby Joe</color> needs YOUR help to live through his life as a baby <i>parasaurolophus.</i>",
+    "textName": "",
+    "spriteDescript": "tutorials/tut 2",
+    "choices": []
+  },
+  {
+    "type": "WideImageAndText",
+    "textCaption": "Your main goals are simple but important: help <color=orange>Baby Joe</color> find food, seek safe shelter, and avoid hungry predators!",
+    "textName": "",
+    "spriteDescript": "tutorials/tut 2",
+    "choices": []
+  },
+  {
+    "type": "WideImageAndText",
+    "textCaption": "For every situation, you will have three choices. Let me explain how they work:",
+    "textName": "",
+    "spriteDescript": "tutorials/tut 2",
+    "choices": []
+  },
+  {
+    "type": "WideImageAndText",
+    "textCaption": "<color=#4CAF50>●</color> <indent=1.6em><b>The Scientific Choice:</b> This is the correct answer! It helps <color=orange>Baby Joe</color> grow and move to the next stage.</indent>",
+    "textName": "",
+    "spriteDescript": "tutorials/tut 2",
+    "choices": []
+  },
+  {
+    "type": "WideImageAndText",
+    "textCaption": "<color=#F2C94C>●</color> <indent=1.6em><b>The Tricky Choice:</b> This choice might seem partially correct, but it isn't the best path. You won't lose a life, but you'll have to try again.</indent>\n",
+    "textName": "",
+    "spriteDescript": "tutorials/tut 2",
+    "choices": []
+  },
+  {
+    "type": "WideImageAndText",
+    "textCaption": "</indent><color=#E74C5F>●</color> <indent=1.6em><b>The Dangerous Choice:</b> Watch out! This choice is unsafe, and <color=orange>Baby Joe</color> will lose one of its lives.</indent>",
+    "textName": "",
+    "spriteDescript": "tutorials/tut 2",
+    "choices": []
+  },
+  {
+    "type": "WideImageAndText",
+    "textCaption": "Be careful, explorers! If <color=orange>Baby Joe</color> loses all of its lives, the journey is over, and you will have to start from the beginning",
+    "textName": "",
+    "spriteDescript": "tutorials/tut 2",
+    "choices": []
+  },
+  {
+    "type": "WideImageAndText",
+    "textCaption": " So look closely, think like a real scientist, and choose the most scientifically accurate option!",
+    "textName": "",
+    "spriteDescript": "tutorials/tut 2",
+    "choices": []
+  },
+  {
+    "type": "PortraitAndText",
+    "textCaption": "Now, I hope you're ready. \nLet’s start this incredible journey!",
+    "textName": "Dr. Farke",
+    "spritePortrait": "Portrait/dr",
+    "spriteDescript": "",
+    "choices": []
+  },
+  {
+    "type": "PortraitAndText",
+    "textCaption": "See you 75 million years ago!",
+    "textName": "Dr. Farke",
+    "spritePortrait": "Portrait/dr",
+    "spriteDescript": "",
+    "choices": []
+  }
+]

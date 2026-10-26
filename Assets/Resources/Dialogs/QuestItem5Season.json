@@ -1,0 +1,139 @@
+[
+  {
+    "type": "TextOnly",
+    "textCaption": "The season changes. Food becomes scarce. ",
+    "textName": "",
+    "spriteDescript": "",
+    "choices": []
+  },
+  {
+    "type": "PortraitAndText",
+    "textCaption": "I need to find food... where should I go?",
+    "textName": "<color=orange>Baby Joe</color>",
+    "spritePortrait": "Portrait/babyjoe",
+    "spriteDescript": "",
+    "choices": [
+      {
+        "text": "1",
+        "afterText": "...",
+        "aftersprite": "",
+        "sprite": "",
+        "answerType": "Correct",
+        "afterDialogs": []
+      },
+      {
+        "text": "2",
+        "afterText": "...",
+        "aftersprite": "",
+        "sprite": "",
+        "answerType": "Wrong",
+        "afterDialogs": []
+      },
+      {
+        "text": "3",
+        "afterText": "...",
+        "aftersprite": "",
+        "sprite": "",
+        "answerType": "NotWrong",
+        "afterDialogs": []
+      }
+    ]
+  },
+  {
+    "type": "QuestionWith3Choices",
+    "textCaption": " As the seasons change, so does the habitat. \nTo find more food, where and how should <color=orange>Baby Joe</color> move to survive?",
+    "textName": "",
+    "spriteDescript": "",
+    "choices": [
+      {
+        "text": "Follow the group to a wetter floodplain",
+        "afterText": "",
+        "aftersprite": "",
+        "sprite": "quests/new Q2-Q5 image/q5a1",
+        "answerType": "Correct",
+        "afterDialogs": [
+          {
+            "type": "PortraitAndText",
+            "textCaption": "Correct! Following the herd leads to abundant food and safer conditions.",
+            "textName": "Dr. Farke",
+            "spritePortrait": "Portrait/dr",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "There’s so much to eat! I love my group!",
+            "textName": "<color=orange>Baby Joe</color>",
+            "spritePortrait": "Portrait/babyjoe_joy",
+            "spriteDescript": "",
+            "choices": []
+          }
+        ]
+      },
+      {
+        "text": "Wander into upland dry forest",
+        "afterText": "",
+        "aftersprite": "",
+        "sprite": "quests/new Q2-Q5 image/q5a2",
+        "answerType": "Wrong",
+        "afterDialogs": [
+          {
+            "type": "TextOnly",
+            "textCaption": "Uh-oh! The dry forest lacks enough vegetation to sustain you.",
+            "textName": "",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "Thirsty...food...",
+            "textName": "<color=orange>Baby Joe</color>",
+            "spritePortrait": "Portrait/babyjoe_boring3",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "Nothing......here...",
+            "textName": "<color=orange>Baby Joe</color>",
+            "spritePortrait": "Portrait/babyjoe_boring2",
+            "spriteDescript": "",
+            "choices": []
+          }
+        ]
+      },
+      {
+        "text": "Split off with juveniles",
+        "afterText": "",
+        "aftersprite": "",
+        "sprite": "quests/new Q2-Q5 image/q5a3",
+        "answerType": "NotWrong",
+        "afterDialogs": [
+          {
+            "type": "TextOnly",
+            "textCaption": "Almost! You have some safety in numbers, but lack adult protection.",
+            "textName": "",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "Uhhh, I love you guys, but I don’t feel so safe...!",
+            "textName": "<color=orange>Baby Joe</color>",
+            "spritePortrait": "Portrait/babyjoe",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "Stay close!",
+            "textName": "<color=orange>Baby Joe</color>",
+            "spritePortrait": "Portrait/babyjoe",
+            "spriteDescript": "",
+            "choices": []
+          }
+        ]
+      }
+    ]
+  }
+]

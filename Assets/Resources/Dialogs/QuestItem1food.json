@@ -1,0 +1,130 @@
+[
+  {
+    "type": "TextOnly",
+    "textCaption": "Looks like <color=orange>Baby Joe</color> is hungry.",
+    "textName": "",
+    "spriteDescript": "",
+    "choices": []
+  },
+  {
+    "type": "PortraitAndText",
+    "textCaption": "Ughhh...I need to eat something... but what?",
+    "textName": "<color=orange>Baby Joe</color>",
+    "spritePortrait": "Portrait/babyjoe",
+    "spriteDescript": "",
+    "choices": []
+  },
+  {
+    "type": "PortraitAndText",
+    "textCaption": "(maybe something easy to chew…?)",
+    "textName": "<color=orange>Baby Joe</color>",
+    "spritePortrait": "Portrait/babyjoe",
+    "spriteDescript": "",
+    "choices": []
+  },
+  {
+    "type": "QuestionWith3Choices",
+    "textCaption": "What would be the best meal for <color=orange>Baby Joe? </color>",
+    "textName": "",
+    "spriteDescript": "",
+    "choices": [
+      {
+        "text": "Soft leaves, shoots, and young ferns",
+        "afterText": "",
+        "aftersprite": "",
+        "sprite": "quests/q1a1_soft",
+        "answerType": "Correct",
+        "afterDialogs": [
+          {
+            "type": "PortraitAndText",
+            "textCaption": "Correct! Juvenile <i>Parasaurolophus</i> teeth are adapted to eat the many plants species abundant during the Late Cretaceous.",
+            "textName": "Dr. Farke",
+            "spritePortrait": "Portrait/dr",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "<color=orange>Baby Joe</color> had a beak that would have allowed them to take big bites while \"cropping\" the plants they were eating.",
+            "textName": "Dr. Farke",
+            "spritePortrait": "Portrait/dr",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "Mmm... soft and juicy!",
+            "textName": "<color=orange>Baby Joe</color>",
+            "spritePortrait": "Portrait/babyjoe_chewing",
+            "spriteDescript": "",
+            "choices": []
+          }
+        ]
+      },
+      {
+        "text": "Bark, tough conifer needles",
+        "afterText": "",
+        "aftersprite": "",
+        "sprite": "quests/q1a2_bark",
+        "answerType": "Wrong",
+        "afterDialogs": [
+          {
+            "type": "TextOnly",
+            "textCaption": "Uh-oh! The needles are too tough and sharp for your young teeth.",
+            "textName": "",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "Ow... that hurts...",
+            "textName": "<color=orange>Baby Joe</color>",
+            "spritePortrait": "Portrait/babyjoe_scream",
+            "spriteDescript": "",
+            "choices": []
+          }
+        ]
+      },
+      {
+        "text": "Aquatic plants underwater",
+        "afterText": "",
+        "aftersprite": "",
+        "sprite": "quests/q1a3_undersea",
+        "answerType": "NotWrong",
+        "afterDialogs": [
+          {
+            "type": "TextOnly",
+            "textCaption": "Almost! The plants look tasty, but water can hide dangerous predators.",
+            "textName": "",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "I don’t feel safe here...",
+            "textName": "<color=orange>Baby Joe</color>",
+            "spritePortrait": "Portrait/babyjoe",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "Har har har... well if it isn’t a good day’s meal walking straight towards me!",
+            "textName": "<color=red><i>Deinosuchus</i></color>",
+            "spritePortrait": "Portrait/Deinosuchus",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "Wahhhh!",
+            "textName": "<color=orange>Baby Joe</color>",
+            "spritePortrait": "Portrait/babyjoe_scray",
+            "spriteDescript": "",
+            "choices": []
+          }
+        ]
+      }
+    ]
+  }
+]

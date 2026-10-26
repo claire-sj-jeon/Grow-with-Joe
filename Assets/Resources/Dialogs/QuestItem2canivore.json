@@ -1,0 +1,143 @@
+[
+  {
+    "type": "TextOnly",
+    "textCaption": "Oh no! It’s a <i>Teratophoneus</i>, your predator! \nAnd it looks hungry...",
+    "textName": "",
+    "spriteDescript": "",
+    "choices": []
+  },
+  {
+    "type": "PortraitAndText",
+    "textCaption": "Uh-oh! What should I do!",
+    "textName": "<color=orange>Baby Joe</color>",
+    "spritePortrait": "Portrait/babyjoe",
+    "spriteDescript": "",
+    "choices": []
+  },
+  {
+    "type": "PortraitAndText",
+    "textCaption": "I need to decide quickly...",
+    "textName": "<color=orange>Baby Joe</color>",
+    "spritePortrait": "Portrait/babyjoe",
+    "spriteDescript": "",
+    "choices": []
+  },
+  {
+    "type": "QuestionWith3Choices",
+    "textCaption": "A <i>Teratophoneus</i> has appeared! \nWhat is <color=orange>Baby Joe's</color> best chance for survival?\n",
+    "textName": "",
+    "spriteDescript": "",
+    "choices": [
+      {
+        "text": "Hide motionless in vegetation",
+        "afterText": "",
+        "aftersprite": "",
+        "sprite": "quests/new Q2-Q5 image/q2a1",
+        "answerType": "Wrong",
+        "afterDialogs": [
+          {
+            "type": "TextOnly",
+            "textCaption": "Uh-oh! The <i>Tetraphoneus</i> actually had a great sense of smell—perfect for finding out where its prey is.",
+            "textName": "",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "TextOnly",
+            "textCaption": "To make it even worse, it was an ambush predator—a type of dinosaur that hides and jumps out at its prey to hunt it down.",
+            "textName": "",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "It sees me!",
+            "textName": "<color=orange>Baby Joe</color>",
+            "spritePortrait": "Portrait/babyjoe_scray",
+            "spriteDescript": "",
+            "choices": []
+          }
+        ]
+      },
+      {
+        "text": "Run in a straight line across open ground",
+        "afterText": "",
+        "aftersprite": "",
+        "sprite": "quests/new Q2-Q5 image/q2a2",
+        "answerType": "NotWrong",
+        "afterDialogs": [
+          {
+            "type": "TextOnly",
+            "textCaption": "Almost! You run as fast as you can! \nYou’ve seen some other adult <i>Parasaurolophus</i> before. ",
+            "textName": "",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "TextOnly",
+            "textCaption": "They can outrun the <i>Tetrophoneus</i>, so you can do it too! ...Right...?",
+            "textName": "",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "TextOnly",
+            "textCaption": "Oh no! You’re a juvenile <i>Parasaurolophus</i>, and not as fast as an adult. Running alone is risky.",
+            "textName": "",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "Nghhh... Keep... running...!",
+            "textName": "<color=orange>Baby Joe</color>",
+            "spritePortrait": "Portrait/babyjoe_scream",
+            "spriteDescript": "",
+            "choices": []
+          }
+        ]
+      },
+      {
+        "text": "Call loudly for the group",
+        "afterText": "",
+        "aftersprite": "",
+        "sprite": "quests/new Q2-Q5 image/q2a3",
+        "answerType": "Correct",
+        "afterDialogs": [
+          {
+            "type": "PortraitAndText",
+            "textCaption": "Correct! We know from studying their @crest crest that <color=orange>Baby Joe</color>'s call would have been much higher in pitch than an adult <i>Parasaurolophus</i>.",
+            "textName": "Dr. Farke",
+            "spritePortrait": "Portrait/dr",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "@crestend This difference may have helped adult <i>Parasaurolophus</i> notice and look for younger members in closed environments",
+            "textName": "Dr. Farke",
+            "spritePortrait": "Portrait/dr",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "Staying close to these larger adults would give a juvenile the best chance for survival if the group runs away from a predator!",
+            "textName": "Dr. Farke",
+            "spritePortrait": "Portrait/dr",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "Whew! They heard me!",
+            "textName": "<color=orange>Baby Joe</color>",
+            "spritePortrait": "Portrait/babyjoe_play",
+            "spriteDescript": "",
+            "choices": []
+          }
+        ]
+      }
+    ]
+  }
+]

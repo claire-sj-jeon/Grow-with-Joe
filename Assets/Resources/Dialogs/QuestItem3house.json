@@ -1,0 +1,137 @@
+[
+  {
+    "type": "TextOnly",
+    "textCaption": "Night begins to fall.",
+    "textName": "",
+    "spriteDescript": "",
+    "choices": []
+  },
+  {
+    "type": "PortraitAndText",
+    "textCaption": "I’m tired... I need a safe place to sleep.",
+    "textName": "<color=orange>Baby Joe</color>",
+    "spritePortrait": "Portrait/babyjoe",
+    "spriteDescript": "",
+    "choices": []
+  },
+  {
+    "type": "QuestionWith3Choices",
+    "textCaption": "Night is falling and <color=orange>Baby Joe</color> is tired. \nWhere is the safest place to sleep?",
+    "textName": "",
+    "spriteDescript": "",
+    "choices": [
+      {
+        "text": "Inside the group",
+        "afterText": "",
+        "aftersprite": "",
+        "sprite": "quests/new Q2-Q5 image/q3a1",
+        "answerType": "Correct",
+        "afterDialogs": [
+          {
+            "type": "PortraitAndText",
+            "textCaption": "Correct! Staying within the group offers protection through numbers.",
+            "textName": "Dr. Farke",
+            "spritePortrait": "Portrait/dr",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "I feel safe...",
+            "textName": "<color=orange>Baby Joe</color>",
+            "spritePortrait": "Portrait/babyjoe_sleep",
+            "spriteDescript": "",
+            "choices": []
+          }
+        ]
+      },
+      {
+        "text": "Alone near tall\nplants at the edge",
+        "afterText": "",
+        "aftersprite": "",
+        "sprite": "quests/new Q2-Q5 image/q3a2",
+        "answerType": "Wrong",
+        "afterDialogs": [
+          {
+            "type": "TextOnly",
+            "textCaption": "Uh-oh! The edge of the group leaves you exposed to predators..!",
+            "textName": "",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "I feel like something’s watching me…!",
+            "textName": "<color=orange>Baby Joe</color>",
+            "spritePortrait": "Portrait/babyjoe",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "And…NOW!",
+            "textName": "<color=red><i>Teratophoneus</i></color>",
+            "spritePortrait": "Portrait/Teratophoneus",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "TextOnly",
+            "textCaption": "Oh no! The <i>Teratophoneus</i> found you sleeping! Meeting a predator while open to danger isn’t the best idea…!",
+            "textName": "",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "GAH!!! Where did you come from!!!",
+            "textName": "<color=orange>Baby Joe</color>",
+            "spritePortrait": "Portrait/babyjoe_hurt",
+            "spriteDescript": "",
+            "choices": []
+          }
+        ]
+      },
+      {
+        "text": "In shallow water",
+        "afterText": "",
+        "aftersprite": "",
+        "sprite": "quests/new Q2-Q5 image/q3a3",
+        "answerType": "NotWrong",
+        "afterDialogs": [
+          {
+            "type": "TextOnly",
+            "textCaption": "Almost! The water keeps you cool, but footing is unstable and danger lurks.",
+            "textName": "",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "I can’t get comfortable...",
+            "textName": "<color=orange>Baby Joe</color>",
+            "spritePortrait": "Portrait/babyjoe",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "Har har har… thanks for the free food!",
+            "textName": "<color=red><i>Deinosuchus</i></color>",
+            "spritePortrait": "Portrait/Deinosuchus",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "Oh no no no—!",
+            "textName": "<color=orange>Baby Joe</color>",
+            "spritePortrait": "Portrait/babyjoe_scray",
+            "spriteDescript": "",
+            "choices": []
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,15 @@
+<linker>
+  <!--
+    Newtonsoft.Json 은 리플렉션으로 필드를 채우므로, IL2CPP(WebGL/모바일) 빌드에서
+    코드 스트리퍼가 "아무도 참조하지 않는" 필드로 판단해 제거하면 역직렬화 결과가 비어 버린다.
+    대화 데이터 타입은 명시적으로 보존한다.
+  -->
+  <assembly fullname="Assembly-CSharp">
+    <type fullname="cowsins2D.DialogForm" preserve="all" />
+    <type fullname="cowsins2D.ChoiceOption" preserve="all" />
+    <type fullname="cowsins2D.DialogForm/DialogType" preserve="all" />
+    <type fullname="cowsins2D.TypeAnswer" preserve="all" />
+  </assembly>
+
+  <assembly fullname="Newtonsoft.Json" preserve="all" />
+</linker>

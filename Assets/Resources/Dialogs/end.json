@@ -1,0 +1,145 @@
+[
+  {
+    "type": "TextOnly",
+    "textCaption": "The season changes. Food becomes scarce. ",
+    "textName": "",
+    "spriteDescript": "",
+    "choices": []
+  },
+  {
+    "type": "PortraitAndText",
+    "textCaption": "I need to find food... where should I go?",
+    "textName": "baby joe",
+    "spritePortrait": "Portrait/babyjoe",
+    "spriteDescript": "",
+    "choices": [
+      {
+        "text": "1",
+        "afterText": "...",
+        "aftersprite": "",
+        "sprite": "",
+        "answerType": "Correct",
+        "afterDialogs": []
+      },
+      {
+        "text": "2",
+        "afterText": "...",
+        "aftersprite": "",
+        "sprite": "",
+        "answerType": "Wrong",
+        "afterDialogs": []
+      },
+      {
+        "text": "3",
+        "afterText": "...",
+        "aftersprite": "",
+        "sprite": "",
+        "answerType": "NotWrong",
+        "afterDialogs": []
+      }
+    ]
+  },
+  {
+    "type": "LastQuestionWith3Choices",
+    "textCaption": "Question",
+    "textName": "",
+    "spriteDescript": "",
+    "choices": [
+      {
+        "text": "Follow the group to a wetter floodplain",
+        "afterText": "",
+        "aftersprite": "",
+        "sprite": "quests/new Q2-Q5 image/q5a1",
+        "answerType": "Correct",
+        "afterDialogs": [
+          {
+            "type": "TextOnly",
+            "textCaption": "Correct! Paleontologists are still trying to figure out if or why some dinosaurs migrated.",
+            "textName": "",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "TextOnly",
+            "textCaption": "But as a juvenile, <color=orange>Baby Joe</color>’s best chance of survival is to stay with the group and follow the lead of the adult <i>Parasaurolophus</i>.",
+            "textName": "",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "There’s so much to eat! I love my group!",
+            "textName": "",
+            "spritePortrait": "Portrait/babyjoe",
+            "spriteDescript": "",
+            "choices": []
+          }
+        ]
+      },
+      {
+        "text": "Wander into upland dry forest",
+        "afterText": "",
+        "aftersprite": "",
+        "sprite": "quests/new Q2-Q5 image/q5a2",
+        "answerType": "Wrong",
+        "afterDialogs": [
+          {
+            "type": "TextOnly",
+            "textCaption": "The dry forest lacks enough vegetation to sustain you.",
+            "textName": "",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "Thirsty...food...",
+            "textName": "baby joe",
+            "spritePortrait": "Portrait/babyjoe",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "Nothing......here...",
+            "textName": "baby joe",
+            "spritePortrait": "Portrait/babyjoe",
+            "spriteDescript": "",
+            "choices": []
+          }
+        ]
+      },
+      {
+        "text": "Split off with juveniles",
+        "afterText": "",
+        "aftersprite": "",
+        "sprite": "quests/new Q2-Q5 image/q5a3",
+        "answerType": "NotWrong",
+        "afterDialogs": [
+          {
+            "type": "TextOnly",
+            "textCaption": "You have some safety in numbers, but lack adult protection.",
+            "textName": "",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "Uhhh, I love you guys, but I don’t feel so safe...!",
+            "textName": "baby joe",
+            "spritePortrait": "Portrait/babyjoe",
+            "spriteDescript": "",
+            "choices": []
+          },
+          {
+            "type": "PortraitAndText",
+            "textCaption": "Stay close!",
+            "textName": "baby joe",
+            "spritePortrait": "Portrait/babyjoe",
+            "spriteDescript": "",
+            "choices": []
+          }
+        ]
+      }
+    ]
+  }
+]

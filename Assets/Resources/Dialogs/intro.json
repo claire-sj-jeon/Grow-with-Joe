@@ -1,0 +1,40 @@
+[
+  {
+    "type": "PortraitAndText",
+    "textCaption": "Hi there, explorers!\nI’m <b>Dr. Andrew Farke</b>, paleontologist.\nNice to meet you!",
+    "textName": "Dr. Farke",
+    "spritePortrait": "Portrait/dr",
+    "spriteDescript": "",
+    "choices": []
+  },
+  {
+    "type": "TextOnly",
+    "textCaption": "You see that cute little dinosaur over there?  @look \nThat’s<color=orange> “Baby Joe.” </color>",
+    "textName": "",
+    "spriteDescript": "",
+    "choices": []
+  },
+  {
+    "type": "TextOnly",
+    "textCaption": "<color=orange>Baby Joe</color> is a <i>Parasaurolophus</i> that lived during the Cretaceous period, in a place we call Utah today. @lookend \n\n\n",
+    "textName": "",
+    "spriteDescript": "",
+    "choices": []
+  },
+  {
+    "type": "PortraitAndText",
+    "textCaption": "Today, we’re going on an amazing adventure to learn about <color=orange>ontogeny.</color>",
+    "textName": "Dr. Farke",
+    "spritePortrait": "Portrait/dr",
+    "spriteDescript": "",
+    "choices": []
+  },
+  {
+    "type": "PortraitAndText",
+    "textCaption": "... That might sound intimidating, but that just means we’re going to learn how animals grow up.",
+    "textName": "Dr. Farke",
+    "spritePortrait": "Portrait/dr",
+    "spriteDescript": "",
+    "choices": []
+  }
+]
