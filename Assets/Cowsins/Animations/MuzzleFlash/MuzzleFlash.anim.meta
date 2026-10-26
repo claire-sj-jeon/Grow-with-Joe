@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 300bcc7e794d59e44b06fe098c0615a9
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Animations/MuzzleFlash/MuzzleFlash.anim
+  uploadId: 875044

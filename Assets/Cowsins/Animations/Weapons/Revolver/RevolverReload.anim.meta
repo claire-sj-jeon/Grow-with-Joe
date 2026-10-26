@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ccda3d77c7fb5ba4a9d00d60fe33690b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Animations/Weapons/Revolver/RevolverReload.anim
+  uploadId: 875044

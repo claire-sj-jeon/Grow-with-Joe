@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 365d8b069b41d864480c7ba29391ca0d
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Prefabs/Projectiles/TurretProjectile.prefab
+  uploadId: 875044

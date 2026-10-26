@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2b1be34df85d0c842bdd2a81415699be
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Animations/Weapons/SMG/SMG.controller
+  uploadId: 875044

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5c27b7fc0b7f27a4b8c41eda5684d66e
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/VFX/WoodHitVFX.prefab
+  uploadId: 875044

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: a0ee02c7537ba3248a9f0d98eb17b862
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Scripts/UI/SlotData.cs
+  uploadId: 875044
