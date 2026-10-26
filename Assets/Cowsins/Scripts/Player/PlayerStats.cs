@@ -143,7 +143,7 @@ namespace cowsins2D
             if (health <= 0)
             {
                 IsDead = true;
-                playerControl.LoseControl();
+                //playerControl.LoseControl();
             }
         }
 

@@ -285,7 +285,7 @@ namespace cowsins2D
             yield return new WaitForSeconds(6.0f);
 
             // 3초 후 또는 아무 입력 시 다음으로
-            yield return WaitForSecondsOrAnyInput(10.0f);           
+            yield return WaitForSecondsOrAnyInput(15.0f);           
             videoPlayer.Stop();
             yield return new WaitForSeconds(2.0f);
 

@@ -125,6 +125,8 @@ namespace cowsins2D
         {
             if (currentState == newState) return;
 
+            //Debug.Log($"SetAnimation State ===> {currentState}  ==> {newState}");
+
             if(!String.IsNullOrEmpty(currentState)) animator?.ResetTrigger(currentState);
             animator?.SetTrigger(newState);
             currentState = newState;
