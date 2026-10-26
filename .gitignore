@@ -24,3 +24,10 @@ ProjectSettings/ProjectVersion.txt
 ProjectSettings/ProjectVersion.txt
 UserSettings/Layouts/default-6000.dwlt
 UserSettings/Layouts/default-6000.dwlt
+.vsconfig
+Assembly-CSharp-Editor.csproj
+Assembly-CSharp-firstpass.csproj
+Assembly-CSharp.csproj
+P-Game.sln
+P-Game.slnx
+.vs/P-Game/v16/.suo
