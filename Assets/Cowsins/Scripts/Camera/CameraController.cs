@@ -27,13 +27,22 @@ namespace cowsins2D
 
 
         private float fov;
-
         private Camera cam;
+        Vector3 savecameraOffset;
 
+        public  void ChangeCameraOffset(Vector3 offset )
+        {
+            cameraOffset = offset;
+        }
+        public void RecoverCameraOffset()
+        {
+            cameraOffset = savecameraOffset;
+        }
         private void Awake()
         {
             cam = transform.GetChild(0).GetComponent<Camera>();
             fov = cam.fieldOfView;
+            savecameraOffset = cameraOffset;
         }
 
         private void Update()

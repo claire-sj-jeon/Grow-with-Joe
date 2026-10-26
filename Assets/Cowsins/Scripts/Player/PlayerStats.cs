@@ -202,7 +202,9 @@ namespace cowsins2D
 
         public void Heal(float healAmount)
         {
-            if (health >= maxHealth && maxShield <= 0 || shield >= maxShield) return;
+            //if (health >= maxHealth && maxShield <= 0 || shield >= maxShield) return;
+            if (health >= maxHealth && maxShield <= 0 ) return;
+
             // Apply healing to shield and health
             shield += healAmount * multipliers.healingReceivedModifier;
             health += healAmount;

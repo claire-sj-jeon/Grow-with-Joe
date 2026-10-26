@@ -22,14 +22,13 @@ namespace cowsins2D
     [DllImport("__Internal")]
     private static extern void WebExitFullscreen();
 #endif
-
-
         public static DialogMenu Instance { get; private set; }
 
         [SerializeField] private PlayerDependencies playerDependencies;
         [SerializeField] private UIEffect root;
-
+        
         [SerializeField] DialogTextBox Textbox;
+        [SerializeField] CameraController controllerCamera;
         [SerializeField] AudioClip correctSfx;
         [SerializeField] AudioClip wrongSfx;
 
@@ -82,6 +81,8 @@ namespace cowsins2D
             playerState = playerDependencies.PlayerStats;
             crosshair = playerDependencies.Crosshair;
 
+            
+
             Textbox.Hide();
             videoPlayer.Hide();
             root.Activity = false;
@@ -100,12 +101,15 @@ namespace cowsins2D
                 ShowDialog(listDialogintro);
                 actionDialogEnd = () =>
                 {
-                    RegisterFunction.SingleCall(1.0f, 
-                        () => 
-                        { 
-                            ShowDialog(listDialogtutorial);
-                            actionDialogEnd = () => { };
-                        }
+
+                    if( PauseMenu.TutorialState == 1 )
+                        RegisterFunction.SingleCall(1.0f, 
+                            () => 
+                            { 
+                                ShowDialog(listDialogtutorial);
+                                actionDialogEnd = () => { };
+                                PauseMenu.TutorialState = 2;
+                            }
                         );
                 };
             }
@@ -115,6 +119,7 @@ namespace cowsins2D
         {
             if (Keyboard.current.digit0Key.wasPressedThisFrame)
             {
+                PauseMenu.TutorialState = 0;
                 var sceneName = SceneManager.GetActiveScene().name;
                 SceneManager.LoadScene(sceneName);
             }
@@ -134,6 +139,9 @@ namespace cowsins2D
             }
             if (Keyboard.current.digit3Key.wasPressedThisFrame)
             {
+
+                
+
                 RegisterFunction.SingleCall(5.0f, () => ShowDialog(listDialogEnd));
                 //videoPlayer.PlayUrl("https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2Fjoeplay.mp4?alt=media&token=67c9e8aa-0e33-4ba3-b99c-0b7be6f0942e");                
             }
@@ -155,12 +163,12 @@ namespace cowsins2D
             }
 
             // 모든 아이템을 다 모았을때 마지막 다이알로그 보여주기
-            if (count == needclearCount)
-            //if (count == 1)
-            {  
-                isClear = true;
-                RegisterFunction.SingleCall(5.0f, () => ShowDialog(listDialogEnd));                
-            }
+            //if (count == needclearCount)
+            ////if (count == 1)
+            //{  
+            //    isClear = true;
+            //    RegisterFunction.SingleCall(5.0f, () => ShowDialog(listDialogEnd));                
+            //}
         }
 
         public void GetAnaswer(TypeAnswer answer, DialogTextBox textBox)
@@ -170,6 +178,7 @@ namespace cowsins2D
                 textBox.HideChoice();
                 textBox.ShowEndButton();
                 textBox.Hide();
+                playerState.Heal(1);
                 SoundManager.Instance.PlaySound(correctSfx, 1);
                 QuestCountManager.Instance.AddQuest(1);
             }
@@ -183,7 +192,27 @@ namespace cowsins2D
                 uiController.InvokeOnUpdateHealth();
                 SoundManager.Instance.PlaySound(wrongSfx, 1);
                 //ShowDinoWrong(true);
+            }
+        }
 
+        public void ExtraCommand(string command, DialogTextBox textBox)
+        {
+            switch (command.ToLower())
+            {
+                case "@look":
+                    {   Debug.Log("LOOK 시작");
+                        controllerCamera.ChangeCameraOffset(new Vector3(0.0f,1.44f,-10.0f) ) ;
+                        break;                    
+                    }
+                case "@lookend":
+                    {
+                        Debug.Log("LOOK 종료");
+                        controllerCamera.RecoverCameraOffset();
+                        break;
+                    }
+                default:
+                    Debug.LogWarning($"알 수 없는 command: {command}");
+                    break;
             }
         }
         public void VisibleDialog( bool bis, bool isanimation = true )

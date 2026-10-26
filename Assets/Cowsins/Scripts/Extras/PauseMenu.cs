@@ -34,6 +34,14 @@ namespace cowsins2D
 
         [SerializeField] Button btnrResume;
         [SerializeField] Button btnrStart;
+        [SerializeField] Button btnrTutorial;
+        [SerializeField] Button btnrResources;
+        
+        public static int TutorialState
+        {
+            get => PlayerPrefs.GetInt("istutorial", 0);
+            set { PlayerPrefs.SetInt("istutorial", value); }
+        }
 
         private IPlayerControl playerControl;
         private Crosshair crosshair;
@@ -68,7 +76,19 @@ namespace cowsins2D
             Debug.Log("callFullScreen");
 #endif
             UnPause();
+            btnrTutorial.gameObject.SetActive(false);
             DialogMenu.Instance.StartIntroduceDialog();
+        }
+
+        public void TutorialStart()
+        {
+            TutorialState = 1;            
+            FullAndStart();
+            
+        }
+        public void GoResources()
+        {
+            Application.OpenURL("https://www.google.com");
         }
 
         private void Start()
@@ -101,7 +121,6 @@ namespace cowsins2D
                 WebEnterFullscreen();
                 Debug.Log("callFullScreen");
 #endif
-
                 UnPause();
 
             };
@@ -113,8 +132,12 @@ namespace cowsins2D
             btnResume.Activity = false;
             btnStart.Activity = true;
 
+            Debug.Log($"Tutorial State ==>{TutorialState} ");
+
             btnrResume.gameObject.SetActive(false);
             btnrStart.gameObject.SetActive(true);
+            btnrTutorial.gameObject.SetActive(TutorialState == 0);
+            btnrResources.gameObject.SetActive(true);
 
         }
         private void Update()

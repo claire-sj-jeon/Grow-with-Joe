@@ -45,8 +45,7 @@ namespace cowsins2D
         public string textName;
         public Sprite spritePortrait;
         public Sprite spriteDescript;
-        public List<ChoiceOption> choices;
-        public bool isDim;
+        public List<ChoiceOption> choices;        
 
     }
 
@@ -72,6 +71,7 @@ namespace cowsins2D
         [SerializeField] UIButton btnNext;
         [SerializeField] UIButton btnEnd;
         [SerializeField] AudioClip sndTyping;
+        [SerializeField] float typeSpeed = 0.02f;
         [SerializeField] List<DialogChoiceOption> lists;
 
         public void HideChoice()
@@ -80,16 +80,149 @@ namespace cowsins2D
                 lists[i].Activity = false;
         }
 
-        IEnumerator TypeText(UiObject targetBox, string message, float typingSpeed)
+        //IEnumerator TypeText(UiObject targetBox, string message, float typingSpeed)
+        //{
+        //    targetBox.Text.text = "";
+        //    yield return new WaitForSeconds(0.01f);
+        //    for (int i = 0; i < message.Length; i++)
+        //    {
+        //        targetBox.Text.text += message[i];
+        //        yield return new WaitForSeconds(typingSpeed);
+                
+        //        if( i%2 == 0 )
+        //            SoundManager.Instance.PlaySound(sndTyping, 0.4f);
+        //    }
+        //}
+
+        //IEnumerator TypeText(DialogMenu menu, UiObject targetBox, string message, float typingSpeed)
+        //{
+        //    targetBox.Text.text = "";
+        //    yield return new WaitForSeconds(0.01f);
+
+        //    int visibleCharCount = 0;
+
+        //    for (int i = 0; i < message.Length; i++)
+        //    {
+        //        // command 파싱
+        //        if (message[i] == '@')
+        //        {
+        //            int commandStart = i;
+        //            int commandEnd = i + 1;
+
+        //            // 공백, 줄바꿈 전까지를 command로 간주
+        //            while (commandEnd < message.Length &&
+        //                   !char.IsWhiteSpace(message[commandEnd]))
+        //            {
+        //                commandEnd++;
+        //            }
+
+        //            string command = message.Substring(commandStart, commandEnd - commandStart);
+
+        //            // command 처리
+        //            //yield return HandleCommand(command, targetBox);
+
+        //            menu.ExtraCommand(command, this);                    
+
+        //            // command 부분은 출력하지 않고 건너뜀
+        //            i = commandEnd - 1;
+        //            continue;
+        //        }
+
+        //        // 일반 텍스트 출력
+        //        targetBox.Text.text += message[i];
+        //        visibleCharCount++;
+
+        //        yield return new WaitForSeconds(typingSpeed);
+
+        //        if (visibleCharCount % 2 == 0)
+        //            SoundManager.Instance.PlaySound(sndTyping, 0.4f);
+        //    }
+        //}
+
+        IEnumerator TypeText(DialogMenu menu, UiObject targetBox, string message, float typingSpeed)
         {
             targetBox.Text.text = "";
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(0.01f);
+
+            int visibleCharCount = 0;
+
             for (int i = 0; i < message.Length; i++)
             {
+                // 1. command 파싱 (@look 같은 것)
+                if (message[i] == '@')
+                {
+                    int commandStart = i;
+                    int commandEnd = i + 1;
+
+                    while (commandEnd < message.Length &&
+                           !char.IsWhiteSpace(message[commandEnd]))
+                    {
+                        commandEnd++;
+                    }
+
+                    string command = message.Substring(commandStart, commandEnd - commandStart);
+
+                    menu.ExtraCommand(command, this);
+
+                    i = commandEnd - 1;
+                    continue;
+                }
+
+                // 2. RichText tag 파싱 (<color=orange>, </color>, <i> 등)
+                if (message[i] == '<')
+                {
+                    int tagStart = i;
+                    int tagEnd = i + 1;
+
+                    while (tagEnd < message.Length && message[tagEnd] != '>')
+                    {
+                        tagEnd++;
+                    }
+
+                    // '>'까지 포함해서 tag 전체를 한 번에 추가
+                    if (tagEnd < message.Length && message[tagEnd] == '>')
+                    {
+                        string tag = message.Substring(tagStart, tagEnd - tagStart + 1);
+                        targetBox.Text.text += tag;
+
+                        i = tagEnd;
+                        continue;
+                    }
+                }
+
+                // 3. 일반 텍스트 출력
                 targetBox.Text.text += message[i];
+                visibleCharCount++;
+
                 yield return new WaitForSeconds(typingSpeed);
-                SoundManager.Instance.PlaySound(sndTyping, 1);
+
+                if (visibleCharCount % 2 == 0)
+                    SoundManager.Instance.PlaySound(sndTyping, 0.4f);
             }
+        }
+
+
+        IEnumerator HandleCommand(string command, UiObject targetBox)
+        {
+            switch (command.ToLower())
+            {
+                case "@look":
+                    Debug.Log("LOOK 시작");
+                    // 여기서 원하는 처리
+                    // 예: 캐릭터 바라보기, 애니메이션 재생 등
+                    break;
+
+                case "@lookend":
+                    Debug.Log("LOOK 종료");
+                    // 여기서 원하는 처리
+                    break;
+
+                default:
+                    Debug.LogWarning($"알 수 없는 command: {command}");
+                    break;
+            }
+
+            yield break;
         }
 
         public void ShowEndButton()
@@ -136,12 +269,12 @@ namespace cowsins2D
 
                 prtrain_image.image.SetNativeSize();
                 StopAllCoroutines();
-                StartCoroutine(TypeText(portrain_textBox, form.textCaption, 0.05f));
+                StartCoroutine(TypeText(menu, portrain_textBox, form.textCaption, typeSpeed));
             }
             else
             {   normal_parent.Activity = true;
                 StopAllCoroutines();
-                StartCoroutine(TypeText(normal_textBox, form.textCaption, 0.05f));
+                StartCoroutine(TypeText(menu, normal_textBox, form.textCaption, typeSpeed));
             }                
 
             
@@ -199,9 +332,10 @@ namespace cowsins2D
 
                                     portrain_parent.Activity = false;
                                     normal_parent.Activity = true;
+                                    textNameBox_parent.Activity = false;
                                     btnNext.Activity = false;
                                     btnEnd.Activity = false;
-                                    StartCoroutine(TypeText(normal_textBox, form.textCaption, 0.05f));
+                                    StartCoroutine(TypeText(menu, normal_textBox, form.textCaption, typeSpeed));
 
                                     DialogMenu.Instance.GetAnaswer(answer, this);
                                     
@@ -228,11 +362,11 @@ namespace cowsins2D
 
                             if (form.type == DialogType.PortraitAndText)
                                 StartCoroutine(
-                                    TypeText(portrain_textBox, choice.afterText, 0.05f)
+                                    TypeText(menu, portrain_textBox, choice.afterText, typeSpeed)
                                     );
                             else
                                 StartCoroutine(
-                                    TypeText(normal_textBox, choice.afterText, 0.05f)
+                                    TypeText(menu, normal_textBox, choice.afterText, typeSpeed)
                                     );
                         });
                 }
