@@ -25,6 +25,7 @@ namespace cowsins2D
         public Sprite aftersprite;
         public Sprite sprite;
         public TypeAnswer answerType;
+        public List<DialogForm> afterDialogs;
     }
 
     [System.Serializable]
@@ -72,8 +73,6 @@ namespace cowsins2D
         [SerializeField] UIButton btnEnd;
         [SerializeField] AudioClip sndTyping;
         [SerializeField] List<DialogChoiceOption> lists;
-
-        
 
         public void HideChoice()
         {
@@ -136,12 +135,15 @@ namespace cowsins2D
                     = form.spritePortrait.rect.width / form.spritePortrait.rect.height;
 
                 prtrain_image.image.SetNativeSize();
+                StopAllCoroutines();
                 StartCoroutine(TypeText(portrain_textBox, form.textCaption, 0.05f));
             }
             else
             {   normal_parent.Activity = true;
+                StopAllCoroutines();
                 StartCoroutine(TypeText(normal_textBox, form.textCaption, 0.05f));
             }                
+
             
 
             // 이름 부분. =========================
@@ -176,6 +178,41 @@ namespace cowsins2D
                         choice.answerType,
                         (answer) =>
                         {
+
+                            if(choice.afterDialogs != null && choice.afterDialogs.Count > 0 )
+                            {
+                                var isLast = (form.type == DialogType.LastQuestionWith3Choices);
+
+                                menu.SaveCurrentDialogPoint();
+                                menu.ShowDialog(choice.afterDialogs);
+
+                                for( int i=0;i< lists.Count;++i)
+
+                                DialogMenu.actionDialogEnd = () =>
+                                {
+                                    menu.ReloadCurrentDialogPoint();
+                                    //menu.VisibleDialog(true, false);
+                                    Show();
+
+                                    for (int i = 0; i < lists.Count; ++i)
+                                        lists[i].Activity = true;
+
+                                    portrain_parent.Activity = false;
+                                    normal_parent.Activity = true;
+                                    btnNext.Activity = false;
+                                    btnEnd.Activity = false;
+                                    StartCoroutine(TypeText(normal_textBox, form.textCaption, 0.05f));
+
+                                    DialogMenu.Instance.GetAnaswer(answer, this);
+                                    
+                                    if (isLast == true && answer == TypeAnswer.Correct )
+                                        menu.GameClearDialog( this );
+
+                                };
+
+                                return;
+                            }
+
                             if (choice.aftersprite != null)
                             {
                                 wideimage_parent.Activity = true;
@@ -232,6 +269,11 @@ namespace cowsins2D
             };
         }
 
+        public void Show()
+        {
+            root.Alpha = 1.0f;
+            root.Activity = true;
+        }
         public void Hide()
         {
             root.Alpha = 0.0f;

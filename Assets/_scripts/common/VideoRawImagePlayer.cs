@@ -22,7 +22,14 @@ public class VideoRawImagePlayer : MonoBehaviour
     [SerializeField] private bool playOnStart = true;
     [SerializeField] private bool loop = false;
     [SerializeField] private bool mute = false;
+    
+    
     private RenderTexture renderTexture;
+    private bool isFinished = false;
+    public bool IsFinished => isFinished;
+    public bool IsPlaying => videoPlayer != null && videoPlayer.isPlaying;
+
+
 
     private void Reset()
     {
@@ -87,6 +94,9 @@ public class VideoRawImagePlayer : MonoBehaviour
 
         videoPlayer.errorReceived -= OnErrorReceived;
         videoPlayer.errorReceived += OnErrorReceived;
+
+        videoPlayer.loopPointReached -= OnVideoFinished;
+        videoPlayer.loopPointReached += OnVideoFinished;
     }
 
     public void Play(VideoClip clip)
@@ -96,13 +106,15 @@ public class VideoRawImagePlayer : MonoBehaviour
             Debug.LogWarning("Play 실패: VideoClip이 null 입니다.");
             return;
         }
-
+        isFinished = false;
         videoClip = clip;
         videoPlayer.source = VideoSource.VideoClip;
         videoPlayer.clip = videoClip;
         videoPlayer.isLooping = loop;
 
         PrepareAndPlay();
+
+        
     }
 
     public void Play()
@@ -117,7 +129,15 @@ public class VideoRawImagePlayer : MonoBehaviour
         videoPlayer.clip = videoClip;
         videoPlayer.isLooping = loop;
 
+        
+
         PrepareAndPlay();
+    }
+
+    private void OnVideoFinished(VideoPlayer vp)
+    {
+        isFinished = true;
+        Debug.Log("비디오 재생 완료");
     }
 
     public void PlayUrl(string url)
@@ -127,6 +147,8 @@ public class VideoRawImagePlayer : MonoBehaviour
             Debug.LogWarning("PlayUrl 실패: url 이 비어있습니다.");
             return;
         }
+        isFinished = false;
+        videoClip = null;
 
         videoClip = null;
         videoPlayer.source = VideoSource.Url;

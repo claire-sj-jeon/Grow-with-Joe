@@ -79,6 +79,9 @@ namespace cowsins2D
 
         public virtual void Die(bool condition)
         {
+
+            Debug.Log("Die!!!");
+
             // If the condition is met, handle the death
             if (!condition) return;
 

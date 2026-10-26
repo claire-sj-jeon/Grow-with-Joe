@@ -28,7 +28,10 @@ namespace cowsins2D
 
             if (!player.isDashing) SwitchState(_factory.Default());
 
-            if (playerStats.Health <= 0) SwitchState(_factory.Die());
+            Debug.Log($" ===>  {playerStats.Health}");
+
+            if (playerStats.Health <= 0) 
+                SwitchState(_factory.Die());
         }
     }
 }

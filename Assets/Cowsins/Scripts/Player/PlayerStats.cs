@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 namespace cowsins2D
 {
@@ -259,6 +260,15 @@ namespace cowsins2D
             UIController.onUpdateHealth?.Invoke(health, shield);
 
             PlayerStatsEvents.onRevive?.Invoke();
+
+
+            // 따로 추가 씬 재 로딩.
+            RegisterFunction.SingleCall(0.1f, () =>
+            {
+                var scenename = SceneManager.GetActiveScene().name;
+                SceneManager.LoadScene(scenename);
+            });
+
         }
 
         public void FlashDamage()

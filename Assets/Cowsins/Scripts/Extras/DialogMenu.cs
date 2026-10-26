@@ -93,7 +93,8 @@ namespace cowsins2D
         }
 
         public void StartIntroduceDialog()
-        {
+        {            
+
             RegisterFunction.SingleCall(1.0f, () =>
             {
                 ShowDialog(listDialogintro);
@@ -120,18 +121,21 @@ namespace cowsins2D
 
             if (Keyboard.current.digit2Key.wasPressedThisFrame)
             {
-                videoPlayer.PlayUrl("https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2FbabyjoeVideo.mp4?alt=media&token=8195f766-4c49-4d17-8a22-742af639fd8d");
+                //videoPlayer.PlayUrl("https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2FbabyjoeVideo.mp4?alt=media&token=8195f766-4c49-4d17-8a22-742af639fd8d");
+
+                videoPlayer.Stop();
+                videoPlayer.PlayUrl("https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2FlastScene.mp4?alt=media&token=b32f4f31-0855-4e5f-b881-29d9ff1e9f6e");
+
             }
 
             if (Keyboard.current.digit1Key.wasPressedThisFrame)
             {
-                videoPlayer.Stop();
+                //videoPlayer.Stop();
             }
-
-
             if (Keyboard.current.digit3Key.wasPressedThisFrame)
             {
-                videoPlayer.PlayUrl("https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2Fjoeplay.mp4?alt=media&token=67c9e8aa-0e33-4ba3-b99c-0b7be6f0942e");                
+                RegisterFunction.SingleCall(5.0f, () => ShowDialog(listDialogEnd));
+                //videoPlayer.PlayUrl("https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2Fjoeplay.mp4?alt=media&token=67c9e8aa-0e33-4ba3-b99c-0b7be6f0942e");                
             }
         }
         private void OnDestroy()
@@ -165,6 +169,7 @@ namespace cowsins2D
             {   
                 textBox.HideChoice();
                 textBox.ShowEndButton();
+                textBox.Hide();
                 SoundManager.Instance.PlaySound(correctSfx, 1);
                 QuestCountManager.Instance.AddQuest(1);
             }
@@ -177,24 +182,48 @@ namespace cowsins2D
                 playerState.Damage(1);
                 uiController.InvokeOnUpdateHealth();
                 SoundManager.Instance.PlaySound(wrongSfx, 1);
-
-                ShowDinoWrong(true);
+                //ShowDinoWrong(true);
 
             }
         }
+        public void VisibleDialog( bool bis, bool isanimation = true )
+        {
+            root.Activity = bis;
+            root.Alpha = 1.0f;
+
+            if( bis == true )
+                if (isanimation == true)
+                {
+                    root.Alpha = 0.0f;
+                    root.AlphaEffect();
+                }
+        }
 
          // 처음 대화창보여주기 시작.
-        public void ShowDialog(List<DialogForm> form)
+        public void ShowDialog(List<DialogForm> form, bool bisStart = true)
         {
             story = form;
-            storyIndex = 0; 
-            root.Activity = true;
-            root.Alpha = 0.0f;
-            root.AlphaEffect();
+            storyIndex = 0;
+            VisibleDialog(true, bisStart);            
 
             StepDialog(story[storyIndex]);
             PlayerControlEnable(false);            
         }
+
+        List<DialogForm> saveDialog;
+        int saveStoryIndex;
+
+        public void SaveCurrentDialogPoint()
+        {
+            saveDialog = story;
+            saveStoryIndex = storyIndex;
+        }
+        public void ReloadCurrentDialogPoint()
+        {
+            story = saveDialog;
+            storyIndex = saveStoryIndex;
+        }
+
         public void PlayerControlEnable( bool isEnable)
         {
             if (isEnable == true)
@@ -248,24 +277,27 @@ namespace cowsins2D
 
             videoPlayer.Activity = true;
 
+            //https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2FlastScene.mp4?alt=media&token=b32f4f31-0855-4e5f-b881-29d9ff1e9f6e
+            //https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2FbabyjoeVideo.mp4?alt=media&token=8195f766-4c49-4d17-8a22-742af639fd8d
+
             videoPlayer.Stop();
-            videoPlayer.PlayUrl("https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2FbabyjoeVideo.mp4?alt=media&token=8195f766-4c49-4d17-8a22-742af639fd8d");
-            yield return new WaitForSeconds(5.0f);
+            videoPlayer.PlayUrl("https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2FlastScene.mp4?alt=media&token=b32f4f31-0855-4e5f-b881-29d9ff1e9f6e");
+            yield return new WaitForSeconds(6.0f);
 
             // 3초 후 또는 아무 입력 시 다음으로
-            yield return WaitForSecondsOrAnyInput(10.0f);
-
+            yield return WaitForSecondsOrAnyInput(10.0f);           
             videoPlayer.Stop();
+            yield return new WaitForSeconds(2.0f);
 
-            yield return new WaitForSeconds(1.0f);
+            //yield return new WaitForSeconds(1.0f);
 
-            videoPlayer.PlayUrl("https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2Fjoeplay.mp4?alt=media&token=67c9e8aa-0e33-4ba3-b99c-0b7be6f0942e");
-            yield return new WaitForSeconds(5.0f);
+            //videoPlayer.PlayUrl("https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2Fjoeplay.mp4?alt=media&token=67c9e8aa-0e33-4ba3-b99c-0b7be6f0942e");
+            //yield return new WaitForSeconds(5.0f);
 
-            // 3초 후 또는 아무 입력 시 다음으로
-            yield return WaitForSecondsOrAnyInput(10.0f);
+            //// 3초 후 또는 아무 입력 시 다음으로
+            //yield return WaitForSecondsOrAnyInput(10.0f);
 
-            videoPlayer.Stop();
+            //videoPlayer.Stop();
 
             var scenename = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene(scenename);
@@ -278,6 +310,9 @@ namespace cowsins2D
             while (timer < waitTime)
             {
                 if (IsAnyInputDetected())
+                    yield break;
+
+                if( videoPlayer.IsFinished == true )
                     yield break;
 
                 timer += Time.deltaTime;

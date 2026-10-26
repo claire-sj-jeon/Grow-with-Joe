@@ -5,24 +5,27 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Cowsins/Scenes/MainMenu.unity
     guid: 5a420ab414981034f957abd6db06776b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Cowsins/Scenes/2D/Tutorial.unity
     guid: 41ca39fa4629a0f46a86384cb8be800e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Cowsins/Scenes/2D/2DShowcase.unity
     guid: 48df8cdcc9c060540a6e4e504b7835f3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Cowsins/Scenes/3D/3DShowroom.unity
     guid: 46c3addd807c7c64eb7d57e9e3879cd6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Cowsins/Scenes/3D/3DLevelSelector.unity
     guid: 498156ccab6484849bb5cbaa4b90fe6a
   - enabled: 0
     path: Assets/_scenes/pgame_test.unity
     guid: 9d84e02ee05735342b253e8cbf76bfaf
+  - enabled: 1
+    path: Assets/_scenes/pgame.unity
+    guid: 541f1877cbe851344a55e3f5fdd9fff3
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 33f591010f343104f853b337a1fca25a, type: 2}
   m_UseUCBPForAssetBundles: 0
