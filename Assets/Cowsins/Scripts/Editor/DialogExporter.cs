@@ -18,7 +18,7 @@ namespace cowsins2D
     {
         const string OutputDir = "Assets/Resources/" + DialogJsonLoader.DefaultFolder;
 
-        [MenuItem("Tools/Dialog/Export Scene Dialogs → JSON")]
+        [MenuItem("Tools/Dialog/Export Scene Dialogs -> JSON")]
         static void ExportSceneDialogs()
         {
             var dialogMenu = Object.FindAnyObjectByType<DialogMenu>(FindObjectsInactive.Include);

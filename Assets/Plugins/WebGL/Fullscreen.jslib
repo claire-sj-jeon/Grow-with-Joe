@@ -34,7 +34,7 @@ mergeInto(LibraryManager.library, {
 
   WebEnterFullscreen__deps: ['$SetUnityFullscreen', '$IsInFullscreen'],
   WebEnterFullscreen: function () {
-    // 이미 풀스크린인데 또 요청하면 브라우저가 "종료하려면 …" 안내 토스트를 처음부터 다시 띄운다.
+    // 이미 풀스크린인데 또 요청하면 브라우저가 "종료하려면 ..." 안내 토스트를 처음부터 다시 띄운다.
     // 그동안 그 영역의 터치가 먹히지 않으므로, 상태가 바뀔 때만 요청한다.
     if (IsInFullscreen()) return;
 

@@ -232,7 +232,7 @@ namespace cowsins2D
         {
 #if UNITY_EDITOR
             // 개발용 단축키. 빌드에 포함되면 플레이어가 씬 리로드/컷신을 임의로 트리거할 수 있고,
-            // 키보드가 없는 모바일·WebGL 환경에서는 Keyboard.current 가 null 이라 매 프레임 예외가 난다.
+            // 키보드가 없는 모바일/WebGL 환경에서는 Keyboard.current 가 null 이라 매 프레임 예외가 난다.
             if (Keyboard.current == null) return;
 
             // R : 대화 JSON 전체 재로드
@@ -428,7 +428,7 @@ namespace cowsins2D
         }
 
         // 엔딩 연출 전체 흐름
-        // 지정 지점까지 자동 이동 → 와이드 이미지 대화 → (다음 버튼) → 엔딩 영상 → 씬 비하인드 메뉴
+        // 지정 지점까지 자동 이동 -> 와이드 이미지 대화 -> (다음 버튼) -> 엔딩 영상 -> 씬 비하인드 메뉴
         public void StartEndingSequence() => StartCoroutine(coEndingSequence());
 
         IEnumerator coEndingSequence()

@@ -90,6 +90,11 @@ namespace cowsins2D
             if (Instance != null && Instance != this) Destroy(this);
             else Instance = this;
         }
+
+        private void OnDestroy()
+        {
+            UIKeyboardNavigator.UnregisterScope(this);
+        }
         public void FullScreen()
         {
 #if UNITY_WEBGL && !UNITY_EDITOR
@@ -183,6 +188,10 @@ namespace cowsins2D
             btnResume.Activity = false;
             btnStart.Activity = true;
 
+            // 메뉴가 떠 있으면 대화창보다 먼저 키보드를 가져간다 (대화 도중 ESC 로 연 일시정지 메뉴)
+            UIKeyboardNavigator.RegisterScope(this, menu.transform,
+                () => isPaused && menu != null && menu.gameObject.activeInHierarchy, 10);
+
             Debug.Log($"Tutorial State ==>{TutorialState} ");
 
             AddPressEffect(btnrResources);
@@ -190,7 +199,7 @@ namespace cowsins2D
             AddPressEffect(btnReturnToMain);
 
 
-            // 엔딩 전용 버튼 3종은 위의 Pause() → ApplyMenuMode() 가 이미 감췄다
+            // 엔딩 전용 버튼 3종은 위의 Pause() -> ApplyMenuMode() 가 이미 감췄다
             SetActive(btnrResume, false);
             SetActive(btnrStart, true);
             //SetActive(btnrTutorial, TutorialState == 0);

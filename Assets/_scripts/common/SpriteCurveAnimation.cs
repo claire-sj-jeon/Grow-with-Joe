@@ -130,7 +130,7 @@ public class SpriteCurveAnimation : MonoBehaviour
         spriteRenderer.color = color;
     }
 
-    // 0 → Duration → 0 으로 접어서 왕복시킨다.
+    // 0 -> Duration -> 0 으로 접어서 왕복시킨다.
     float PingPong(float time) => time <= Duration ? time : Duration * 2.0f - time;
 
     // 키가 없는 커브는 "사용하지 않음"으로 보고 기본값을 돌려준다.

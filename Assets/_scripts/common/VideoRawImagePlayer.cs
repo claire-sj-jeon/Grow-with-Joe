@@ -48,6 +48,11 @@ public class VideoRawImagePlayer : MonoBehaviour
         SetupVideoPlayer();
         Activity = false;
         SetRawImageAlpha(0.0f);
+
+        // 엔딩 메뉴 위에서 영상이 재생될 때 메뉴의 포커스 표시와 Enter 입력을 가린다.
+        // 영상 창에는 버튼이 없어서, 이 팝업이 키를 가져가는 동안은 아무 버튼도 고르거나 누를 수 없다.
+        UIKeyboardNavigator.RegisterScope(this, transform,
+            () => effectRoot != null && effectRoot.gameObject.activeInHierarchy && Activity, 20);
     }
 
     private void Start()
@@ -80,6 +85,7 @@ public class VideoRawImagePlayer : MonoBehaviour
     private void OnDestroy()
     {
         ReleaseRenderTexture();
+        UIKeyboardNavigator.UnregisterScope(this);
     }
 
     // RawImage 는 텍스처가 비어 있으면 흰 사각으로 그려진다.

@@ -31,3 +31,7 @@ Assembly-CSharp.csproj
 P-Game.sln
 P-Game.slnx
 .vs/P-Game/v16/.suo
+
+# 로컬 전용 문서 (GitHub 에 올리지 않음)
+/*.md
+Docs/

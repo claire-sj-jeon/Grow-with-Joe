@@ -12,7 +12,7 @@ namespace cowsins2D
         public const string DefaultFolder = "Dialogs";
 
         // 같은 파일을 여러 인스턴스가 반복 파싱하지 않도록 캐시한다.
-        // 실패(파일 없음·파싱 오류)도 함께 기억해 같은 경고가 반복되지 않게 한다.
+        // 실패(파일 없음/파싱 오류)도 함께 기억해 같은 경고가 반복되지 않게 한다.
         static readonly Dictionary<string, List<DialogForm>> cache =
             new Dictionary<string, List<DialogForm>>();
 

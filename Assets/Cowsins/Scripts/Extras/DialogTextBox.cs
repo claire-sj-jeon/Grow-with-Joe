@@ -93,6 +93,18 @@ namespace cowsins2D
 
         RegisterFunction.Element wideLoopTimer;
 
+        // 대화창이 떠 있는 동안 Next / End / 선택지를 키보드로 고르고 누를 수 있게 등록한다
+        void Awake()
+        {
+            UIKeyboardNavigator.RegisterScope(this, root.transform,
+                () => root != null && root.gameObject.activeInHierarchy && root.Activity);
+        }
+
+        void OnDestroy()
+        {
+            UIKeyboardNavigator.UnregisterScope(this);
+        }
+
         // 엔딩 대화를 만들 때 첫 프레임을 DialogForm.spriteDescript 로 넘기기 위한 접근자.
         public Sprite WideLoopFirstSprite =>
             wideLoopSprites != null && wideLoopSprites.Count > 0 ? wideLoopSprites[0] : null;

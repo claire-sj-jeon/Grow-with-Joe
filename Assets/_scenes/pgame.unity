@@ -52539,7 +52539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 5773820164468904756}
-  showCrosshairIfWeaponIsNull: 1
+  showCrosshairIfWeaponIsNull: 0
   defaultSpread: 5
   resizeSpeed: 100
   defaultWidth: 15

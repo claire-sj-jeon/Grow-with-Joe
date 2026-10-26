@@ -48,15 +48,27 @@ namespace cowsins2D
             if (inputActions != null) inputActions.Dispose();
         }
 
-        private void OnDropStarted(InputAction.CallbackContext ctx) => onDrop?.Invoke();
-        private void OnJumpStarted(InputAction.CallbackContext ctx) => onJump?.Invoke();
+        // 팝업이 키보드를 가져간 동안(UIKeyboardNavigator.IsActive)에는 WASD 와 Enter 가 UI 조작에만 쓰인다.
+        // 일시정지(ESC)는 막지 않는다.
+        private void OnDropStarted(InputAction.CallbackContext ctx) { if (!UIKeyboardNavigator.IsActive) onDrop?.Invoke(); }
+        private void OnJumpStarted(InputAction.CallbackContext ctx) { if (!UIKeyboardNavigator.IsActive) onJump?.Invoke(); }
         private void OnJumpCanceled(InputAction.CallbackContext ctx) => onJumpCut?.Invoke();
-        private void OnDashStarted(InputAction.CallbackContext ctx) => onDash?.Invoke();
-        private void OnOpenInventoryStarted(InputAction.CallbackContext ctx) => onOpenInventory?.Invoke();
+        private void OnDashStarted(InputAction.CallbackContext ctx) { if (!UIKeyboardNavigator.IsActive) onDash?.Invoke(); }
+        private void OnOpenInventoryStarted(InputAction.CallbackContext ctx) { if (!UIKeyboardNavigator.IsActive) onOpenInventory?.Invoke(); }
         private void OnPauseStarted(InputAction.CallbackContext ctx) => onPause?.Invoke();
 
         // Update inputs in realtime
-        private void Update() => PlayerInputs = ReceiveInputs();
+        private void Update() => PlayerInputs = UIKeyboardNavigator.IsActive ? BlockedInputs() : ReceiveInputs();
+
+        // 이동 · 점프 · 웅크리기 등은 모두 0 으로 두고 마우스 위치와 일시정지만 살린다
+        private PlayerInputs BlockedInputs()
+        {
+            return new PlayerInputs
+            {
+                MousePos = inputActions.GameControls.MousePosition.ReadValue<Vector2>(),
+                Pausing = inputActions.GameControls.Pause.WasPressedThisFrame()
+            };
+        }
 
         private PlayerInputs ReceiveInputs()
         {
