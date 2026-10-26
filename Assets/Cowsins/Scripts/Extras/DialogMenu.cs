@@ -155,14 +155,14 @@ namespace cowsins2D
         {
             Debug.Log($" Quest ==> {count} ");
 
-            //  Ã³À½ ÀÏ¶§ ÀÎÆ®·Î, Æ©Åä¸®¾ó º¸¿©ÁÖ±â 
+            //  Ã³ï¿½ï¿½ ï¿½Ï¶ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½, Æ©ï¿½ä¸®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ 
             if (count == 0)
             {   
                 isClear = false;                
                 //ShowDialog(listDialogintro);
             }
 
-            // ¸ðµç ¾ÆÀÌÅÛÀ» ´Ù ¸ð¾ÒÀ»¶§ ¸¶Áö¸· ´ÙÀÌ¾Ë·Î±× º¸¿©ÁÖ±â
+            // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾Ë·Î±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½
             //if (count == needclearCount)
             ////if (count == 1)
             //{  
@@ -200,18 +200,18 @@ namespace cowsins2D
             switch (command.ToLower())
             {
                 case "@look":
-                    {   Debug.Log("LOOK ½ÃÀÛ");
+                    {   Debug.Log("LOOK ï¿½ï¿½ï¿½ï¿½");
                         controllerCamera.ChangeCameraOffset(new Vector3(0.0f,1.44f,-10.0f) ) ;
                         break;                    
                     }
                 case "@lookend":
                     {
-                        Debug.Log("LOOK Á¾·á");
+                        Debug.Log("LOOK ï¿½ï¿½ï¿½ï¿½");
                         controllerCamera.RecoverCameraOffset();
                         break;
                     }
                 default:
-                    Debug.LogWarning($"¾Ë ¼ö ¾ø´Â command: {command}");
+                    Debug.LogWarning($"ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ command: {command}");
                     break;
             }
         }
@@ -228,7 +228,7 @@ namespace cowsins2D
                 }
         }
 
-         // Ã³À½ ´ëÈ­Ã¢º¸¿©ÁÖ±â ½ÃÀÛ.
+         // Ã³ï¿½ï¿½ ï¿½ï¿½È­Ã¢ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ ï¿½ï¿½ï¿½ï¿½.
         public void ShowDialog(List<DialogForm> form, bool bisStart = true)
         {
             story = form;
@@ -266,7 +266,7 @@ namespace cowsins2D
             Textbox.StepDialog(form, this);
         }
 
-        // ´ëÈ­Ã¢ ³¡
+        // ï¿½ï¿½È­Ã¢ ï¿½ï¿½
         public void EndDialog(DialogTextBox textBox)
         {
             textBox.Hide();
@@ -310,12 +310,13 @@ namespace cowsins2D
             //https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2FbabyjoeVideo.mp4?alt=media&token=8195f766-4c49-4d17-8a22-742af639fd8d
             //https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2Fending.mp4?alt=media&token=39562907-a115-4430-b2da-9f0ad42fd99f
 
+            //https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2Fending_sd.mp4?alt=media&token=21d36444-3cd1-41f5-9480-6786e0420055
+
 
             videoPlayer.Stop();
-            videoPlayer.PlayUrl("https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2Fending.mp4?alt=media&token=39562907-a115-4430-b2da-9f0ad42fd99f");
-            yield return new WaitForSeconds(6.0f);
+            videoPlayer.PlayUrl("https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2Fending_sd.mp4?alt=media&token=21d36444-3cd1-41f5-9480-6786e0420055");            yield return new WaitForSeconds(6.0f);
 
-            // 3ÃÊ ÈÄ ¶Ç´Â ¾Æ¹« ÀÔ·Â ½Ã ´ÙÀ½À¸·Î
+            // 3ï¿½ï¿½ ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½Æ¹ï¿½ ï¿½Ô·ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             yield return WaitForSecondsOrAnyInput(30.0f);           
             videoPlayer.Stop();
             yield return new WaitForSeconds(2.0f);
@@ -325,7 +326,7 @@ namespace cowsins2D
             //videoPlayer.PlayUrl("https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2Fjoeplay.mp4?alt=media&token=67c9e8aa-0e33-4ba3-b99c-0b7be6f0942e");
             //yield return new WaitForSeconds(5.0f);
 
-            //// 3ÃÊ ÈÄ ¶Ç´Â ¾Æ¹« ÀÔ·Â ½Ã ´ÙÀ½À¸·Î
+            //// 3ï¿½ï¿½ ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½Æ¹ï¿½ ï¿½Ô·ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             //yield return WaitForSecondsOrAnyInput(10.0f);
 
             //videoPlayer.Stop();
