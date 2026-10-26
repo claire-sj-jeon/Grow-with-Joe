@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2a8ce3a06129be9468f62b0d9b2dd6e2
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Prefabs/3D_Environment/BigTree.prefab
+  uploadId: 875044

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 92a4574ffc2ca7044a820e7897cbaa1f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/UI/Typography/PixelTypeFont SDF.asset
+  uploadId: 875044

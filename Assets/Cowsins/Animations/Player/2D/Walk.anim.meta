@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 62e41c2429505d644b6ee74081a454a8
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Animations/Player/2D/Walk.anim
+  uploadId: 875044

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9b09336557d8d004ca17a0b5d5fb2bad
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Prefabs/Weapons/GenericWeapon.prefab
+  uploadId: 875044

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 444df3d9d8f61d745b3c54e8a1ca59d6
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Prefabs/DragAndDrop/2D/GravityZone.prefab
+  uploadId: 875044

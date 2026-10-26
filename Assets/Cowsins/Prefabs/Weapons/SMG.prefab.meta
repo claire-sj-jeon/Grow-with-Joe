@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 310ee4dd4745c8b4c8de4f98d90ccb39
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Prefabs/Weapons/SMG.prefab
+  uploadId: 875044

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6a8c16c2ce7580c488daf7ec17caa5d4
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Prefabs/DragAndDrop/2D/DamageTrigger.prefab
+  uploadId: 875044

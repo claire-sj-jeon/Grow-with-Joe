@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c44f44a032fe0dd4595da331c443fcf9
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/UI/Typography/LTSaeda/LTSaeada-Bold SDF Shadow.asset
+  uploadId: 875044

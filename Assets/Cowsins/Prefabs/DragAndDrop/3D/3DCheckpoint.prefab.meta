@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 18a2343b87cd57e4ebf1e8fbed8b85dc
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Prefabs/DragAndDrop/3D/3DCheckpoint.prefab
+  uploadId: 875044

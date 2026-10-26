@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 123977d594d49ad4dad62f68f6d3153a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/ScriptableObjects/Weapons/Rifle.asset
+  uploadId: 875044

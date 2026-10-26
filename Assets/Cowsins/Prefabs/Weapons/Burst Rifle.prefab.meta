@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3945d6a2e1936814d90022ea763c4a7a
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 266973
+  packageName: Platformer Engine 2D + 2.5D
+  packageVersion: 2.2.5
+  assetPath: Assets/Cowsins/Prefabs/Weapons/Burst Rifle.prefab
+  uploadId: 875044
