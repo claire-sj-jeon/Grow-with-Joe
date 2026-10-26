@@ -82,6 +82,14 @@ namespace cowsins2D
         [SerializeField, TextArea(3, 10)]
         string endingDialogText;
 
+        [Tooltip("엔딩 대화창에 표시할 초상화. 비워 두면 초상화 칸이 빈 상태로 나온다")]
+        [SerializeField]
+        Sprite endingDialogPortrait;
+
+        [Tooltip("엔딩 대화창 이름판에 표시할 이름. 비워 두면 이름판이 숨겨진다")]
+        [SerializeField]
+        string endingDialogName;
+
         IPlayerControl playerControl;
         Crosshair crosshair;
         UIController uiController;
@@ -490,8 +498,10 @@ namespace cowsins2D
         {
             var form = new DialogForm
             {
-                type = DialogForm.DialogType.WideImageAndText,
+                type = DialogForm.DialogType.WidePortraiText,
                 textCaption = endingDialogText,
+                textName = endingDialogName,
+                spritePortrait = endingDialogPortrait,
                 spriteDescript = Textbox.WideLoopFirstSprite,
             };
 
@@ -532,16 +542,12 @@ namespace cowsins2D
         //https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2FbabyjoeVideo.mp4?alt=media&token=8195f766-4c49-4d17-8a22-742af639fd8d
         //https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2Fending.mp4?alt=media&token=39562907-a115-4430-b2da-9f0ad42fd99f
         //https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2Fending_sd.mp4?alt=media&token=21d36444-3cd1-41f5-9480-6786e0420055
-        //https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2Fending_sd.mp4?alt=media&token=e47ce83a-74a8-4250-82f1-e2f8b017659a
+        //https://firebasestorage.googleapis.com/v0/b/bohosoo.appspot.com/o/movies%2Fendi          videoPlayer.Stop();                                 
+        //videoPlayer.PlayUrl("https://cdn.jsdelivr.net/gh/syjang120-maker/BabyJoeEndingCredit@main/ending%20credit.mp4");            
 
-        
+                   
 
-            videoPlayer.Stop();                                 
-            //videoPlayer.PlayUrl("https://cdn.jsdelivr.net/gh/syjang120-maker/BabyJoeEndingCredit@main/ending%20credit.mp4");
-            videoPlayer.PlayUrl("https://cdn.jsdelivr.net/gh/claire-sj-jeon/baby-joe/8-21w.mp4");
-
-        
-
+            videoPlayer.PlayUrl("https://cdn.jsdelivr.net/gh/xlevel75/webgltest@main/data/ending.mp4");
             yield return new WaitForSeconds(6.0f);
 
             // 3초 후 또는 아무 입력 시 다음으로

@@ -61,7 +61,7 @@
           },
           {
             "type": "TextOnly",
-            "textCaption": "But as a juvenile, <color=orange>Baby Joe</color>’s best chance of survival is to stay with the group and follow the lead of the adult <i>Parasaurolophus</i>.",
+            "textCaption": "But as a juvenile, <color=orange>Baby Joe’s</color> best chance of survival is to stay with the group and follow the lead of the adult <i>Parasaurolophus</i>.",
             "textName": "",
             "spriteDescript": "",
             "choices": []

@@ -38,6 +38,7 @@ namespace cowsins2D
             QuestionWith3Choices,
             WideImageAndText,
             LastQuestionWith3Choices,
+            WidePortraiText,
         }
         public DialogType type;
         [TextArea(5, 12)]
@@ -47,10 +48,15 @@ namespace cowsins2D
         public Sprite spriteDescript;
         public List<ChoiceOption> choices;
 
-        // spritePortrait 는 PortraitAndText 에서만 그려진다 (DialogTextBox.StepDialog 참고).
+        // spritePortrait 는 초상화를 그리는 타입에서만 그려진다 (DialogTextBox.StepDialog 참고).
         // 다른 타입에 남아 있는 값은 인스펙터 편집 흔적일 뿐이므로 없는 것으로 취급한다.
         // 프로퍼티로 만들면 Json.NET 이 JSON 에 함께 써 버리므로 메서드로 둔다.
-        public bool UsesPortrait() => type == DialogType.PortraitAndText;
+        public bool UsesPortrait() => type == DialogType.PortraitAndText
+                                   || type == DialogType.WidePortraiText;
+
+        // 와이드 이미지 패널을 켜는 타입
+        public bool UsesWideImage() => type == DialogType.WideImageAndText
+                                    || type == DialogType.WidePortraiText;
 
         // Json.NET 규약: 이 이름의 메서드가 false 를 반환하면 해당 필드를 직렬화하지 않는다.
         public bool ShouldSerializespritePortrait() => UsesPortrait();
@@ -112,6 +118,33 @@ namespace cowsins2D
         {
             wideLoopTimer?.Remove();
             wideLoopTimer = null;
+        }
+
+        // portrain_parent 만 켜서는 부족하다. 그 아래 leftportrait 같은 중간 칸이나
+        // 이미지 자체가 꺼져 있으면 화면에 안 나오므로 경로 전체를 켜 준다.
+        void SetPortraitImage(Sprite sprite)
+        {
+            for (var t = prtrain_image.transform;
+                 t != null && t.IsChildOf(portrain_parent.transform);
+                 t = t.parent)
+                t.gameObject.SetActive(true);
+
+            var image = prtrain_image.image;
+
+            // 빈 칸으로 조용히 넣어두면 원인을 찾기 어려워 경고를 남긴다.
+            // GameObject 를 끄지 않고 Image 만 끈다. 꺼 놓으면 다음에 image 를 다시 찾지 못한다.
+            if (sprite == null)
+            {
+                Debug.LogWarning("[DialogTextBox] 초상화 타입인데 spritePortrait 가 비어 있다");
+                image.enabled = false;
+                return;
+            }
+
+            image.enabled = true;
+            image.sprite = sprite;
+            image.GetComponent<AspectRatioFitter>().aspectRatio
+                                = sprite.rect.width / sprite.rect.height;
+            image.SetNativeSize();
         }
 
         void SetWideImage(Sprite sprite)
@@ -310,14 +343,10 @@ namespace cowsins2D
             normal_parent.Activity = false;
 
             // 초상화와 텍스트 ========
-            if (form.type == DialogType.PortraitAndText)
+            if (form.UsesPortrait())
             {
                 portrain_parent.Activity = true;
-                prtrain_image.image.sprite = form.spritePortrait;
-                prtrain_image.image.GetComponent<AspectRatioFitter>().aspectRatio 
-                    = form.spritePortrait.rect.width / form.spritePortrait.rect.height;
-
-                prtrain_image.image.SetNativeSize();
+                SetPortraitImage(form.spritePortrait);
                 StopAllCoroutines();
                 StartCoroutine(TypeText(menu, portrain_textBox, form.textCaption, typeSpeed));
             }
@@ -422,7 +451,7 @@ namespace cowsins2D
 
             // 넓게 이미지가 나와서 설명을 도와주는 부분.
             wideimage_parent.Activity = false;
-            if (form.type == DialogType.WideImageAndText)
+            if (form.UsesWideImage())
             {
                 wideimage_parent.Activity = true;
                 SetWideImage(form.spriteDescript);

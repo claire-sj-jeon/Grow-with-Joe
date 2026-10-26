@@ -23352,9 +23352,9 @@ RectTransform:
   m_LocalScale: {x: 0.8541096, y: 0.8541096, z: 0.8541096}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 187570667}
   - {fileID: 438281752}
   - {fileID: 457373749}
-  - {fileID: 187570667}
   - {fileID: 488626146}
   - {fileID: 1653202571}
   - {fileID: 439668292}
@@ -30051,6 +30051,8 @@ MonoBehaviour:
   endingStuckDistance: 0.05
   endingDialogText: Great job, explorer! Thanks to you, <color=orange>Baby Joe</color>
     has safely grown bigger and stronger on its path to adulthood! <b>Journey complete!</b>
+  endingDialogPortrait: {fileID: 21300000, guid: 077576c1c828e6645906a9455203def8, type: 3}
+  endingDialogName: Dr. Farke
 --- !u!1 &734694164
 GameObject:
   m_ObjectHideFlags: 0
@@ -41219,7 +41221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.AspectRatioFitter
   m_AspectMode: 3
-  m_AspectRatio: 1
+  m_AspectRatio: 1.7777778
 --- !u!222 &1637645076
 CanvasRenderer:
   m_ObjectHideFlags: 0

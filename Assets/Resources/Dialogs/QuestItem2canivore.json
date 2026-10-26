@@ -106,7 +106,7 @@
         "afterDialogs": [
           {
             "type": "PortraitAndText",
-            "textCaption": "Correct! We know from studying their @crest crest that <color=orange>Baby Joe</color>'s call would have been much higher in pitch than an adult <i>Parasaurolophus</i>.",
+            "textCaption": "Correct! We know from studying their @crest crest that <color=orange>Baby Joe's</color> call would have been much higher in pitch than an adult <i>Parasaurolophus</i>.",
             "textName": "Dr. Farke",
             "spritePortrait": "Portrait/dr",
             "spriteDescript": "",
@@ -114,7 +114,7 @@
           },
           {
             "type": "PortraitAndText",
-            "textCaption": "@crestend This difference may have helped adult <i>Parasaurolophus</i> notice and look for younger members in closed environments",
+            "textCaption": "@crestend This difference may have helped adult <i>Parasaurolophus</i> notice and look for younger members in closed environments.",
             "textName": "Dr. Farke",
             "spritePortrait": "Portrait/dr",
             "spriteDescript": "",

@@ -46,7 +46,7 @@
   },
   {
     "type": "WideImageAndText",
-    "textCaption": "This is where you come in: help <color=orange>Baby Joe</color> make decisions as it grows! <color=orange>Baby Joe</color> needs YOUR help to live through his life as a baby <i>parasaurolophus.</i>",
+    "textCaption": "This is where you come in: help <color=orange>Baby Joe</color> make decisions as it grows! <color=orange>Baby Joe</color> needs YOUR help to live through its life as a baby <i>parasaurolophus.</i>",
     "textName": "",
     "spriteDescript": "tutorials/tut 2",
     "choices": []
@@ -88,7 +88,7 @@
   },
   {
     "type": "WideImageAndText",
-    "textCaption": "Be careful, explorers! If <color=orange>Baby Joe</color> loses all of its lives, the journey is over, and you will have to start from the beginning",
+    "textCaption": "Be careful, explorers! If <color=orange>Baby Joe</color> loses all of its lives, the journey is over, and you will have to start from the beginning.",
     "textName": "",
     "spriteDescript": "tutorials/tut 2",
     "choices": []

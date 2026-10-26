@@ -106,14 +106,15 @@ namespace cowsins2D
 #endif
             UnPause();
             btnrTutorial.gameObject.SetActive(false);
-            DialogMenu.Instance.StartIntroduceDialog();
         }
 
+        // 튜토리얼 버튼으로 들어온 때만 대화를 띄운다.
+        // 시작 버튼(FullAndStart)은 안내 없이 바로 게임으로 들어간다.
         public void TutorialStart()
         {
-            TutorialState = 1;            
+            TutorialState = 1;
             FullAndStart();
-            
+            DialogMenu.Instance.StartIntroduceDialog();
         }
         public void GoResources()
         {
@@ -200,7 +201,7 @@ namespace cowsins2D
             {
                 autoStartOnLoad = false;
                 UnPause();
-                DialogMenu.Instance.StartIntroduceDialog();
+                //DialogMenu.Instance.StartIntroduceDialog();
             }
         }
 

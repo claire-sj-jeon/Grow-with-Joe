@@ -26,6 +26,10 @@ public class VideoRawImagePlayer : MonoBehaviour
     
     private RenderTexture renderTexture;
     private bool isFinished = false;
+
+    // Prepare 가 끝나도 렌더텍스처에 첫 프레임이 그려지기 전까지는 빈 화면이 보인다.
+    // 그 사이를 가리기 위해 실제 프레임이 들어올 때까지 기다린다.
+    private bool waitingFirstFrame = false;
     public bool IsFinished => isFinished;
     public bool IsPlaying => videoPlayer != null && videoPlayer.isPlaying;
 
@@ -43,6 +47,7 @@ public class VideoRawImagePlayer : MonoBehaviour
 
         SetupVideoPlayer();
         Activity = false;
+        SetRawImageAlpha(0.0f);
     }
 
     private void Start()
@@ -59,9 +64,34 @@ public class VideoRawImagePlayer : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (waitingFirstFrame == false)
+            return;
+
+        // frame 은 첫 프레임이 출력되기 전까지 음수다.
+        if (videoPlayer == null || videoPlayer.frame < 0)
+            return;
+
+        waitingFirstFrame = false;
+        SetRawImageAlpha(1.0f);
+    }
+
     private void OnDestroy()
     {
         ReleaseRenderTexture();
+    }
+
+    // RawImage 는 텍스처가 비어 있으면 흰 사각으로 그려진다.
+    // GameObject 를 끄면 effectImage 의 연출과 엉키므로 색 투명도만 건드린다.
+    private void SetRawImageAlpha(float alpha)
+    {
+        if (targetRawImage == null)
+            return;
+
+        var color = targetRawImage.color;
+        color.a = alpha;
+        targetRawImage.color = color;
     }
 
     public bool Activity
@@ -173,6 +203,9 @@ public class VideoRawImagePlayer : MonoBehaviour
 
         effectImage.Activity = false;
 
+        waitingFirstFrame = false;
+        SetRawImageAlpha(0.0f);
+
         //effectRoot.Activity = false;
         //Cinematic shot of[Dynamic action of muscular Black male tennis player in ready stance with racket in red dust], dramatic red-orange color grading, high contrast cinematic lighting with deep shadows and rim highlights, airborne dust smoke and particulate effects, cracked rough earthy textures, intense moody atmosphere, volumetric depth, dynamic framing
     }
@@ -209,6 +242,10 @@ public class VideoRawImagePlayer : MonoBehaviour
         if (targetRawImage != null)
             targetRawImage.texture = null;
 
+        // 준비가 끝나 첫 프레임이 나올 때까지 감춰 둔다.
+        waitingFirstFrame = false;
+        SetRawImageAlpha(0.0f);
+
         videoPlayer.Prepare();
     }
 
@@ -235,6 +272,10 @@ public class VideoRawImagePlayer : MonoBehaviour
             aspectRatioFitter.aspectRatio = (float)width / height;
 
         vp.Play();
+
+        // Play 를 불러도 첫 프레임은 다음 프레임부터 들어온다. Update 에서 드러낸다.
+        SetRawImageAlpha(0.0f);
+        waitingFirstFrame = true;
 
         effectImage.Activity = true;
         

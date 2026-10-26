@@ -38,7 +38,7 @@
         "afterDialogs": [
           {
             "type": "PortraitAndText",
-            "textCaption": "Correct! Young <i>Parasaurolophus</i> may have gathered with others their own age for protection, along with other social interactions",
+            "textCaption": "Correct! Young <i>Parasaurolophus</i> may have gathered with others their own age for protection, along with other social interactions.",
             "textName": "Dr. Farke",
             "spritePortrait": "Portrait/dr",
             "spriteDescript": "",
